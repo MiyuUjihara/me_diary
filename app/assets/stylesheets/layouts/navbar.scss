@@ -1,4 +1,4 @@
-.navbar .navbar-inner {
+.header .header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,6 +8,17 @@
 }
 .header-logo-link-outer {
   margin: 0;
+}
+
+.header .header-logo {
+  width: 200px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  background-image: url("../images/navbar/me_diary_logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  // color: transparent;
 }
 
 .header-nav-text-list {
@@ -38,8 +49,7 @@
   color: #000;
   background-color: #fff;
   text-align:center;
-  height:60px;
-  line-height:60px;
+  height:45px;
+  line-height:45px;
   text-decoration: none;
 }
-

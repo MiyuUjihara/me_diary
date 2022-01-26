@@ -1,2 +1,49 @@
+.content {
+  background: white;
+  padding: 20px 40px;
+  width : 50%;
+  margin: 50px auto;
 
 
+  h1 {
+    padding-bottom: 15px;
+    font-weight: bold;
+    color: #000;
+    font-size: 20px;
+  }
+
+  .form-group {
+
+    .form_label {
+      font-weight: bold;
+    } 
+
+    .form-control {
+      border: solid 1px #ccc;;
+      padding: 0 8px;
+      height: 34px;
+      width: 100%;
+      font-size: 15px;
+      line-height: 1;
+      border-radius: 5px;
+    }
+  }
+  .btn {
+    margin-top: 10px;
+    height: 34px;
+    width: 100%;
+  }
+
+  hr {
+    margin: 10px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+  }
+
+  .form_link {
+
+    .link {
+      text-decoration:none; 
+    }
+  }
+}

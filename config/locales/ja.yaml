@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models:
+      # view側： User.model_name.human => "ユーザ" / t("activerecord.models.user")と同じ
+    # model毎に定義したいattributesを記述
+    attributes:
+        user:
+          name: ユーザー名
+          email: メールアドレス
+          password: パスワード
+        diary:
+          title: タイトル
+          date: 日付
+          caption: 内容

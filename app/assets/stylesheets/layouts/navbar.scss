@@ -2,12 +2,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1024px;
-  height: 78px;
+  width: 100%;
+  height: 80px;
   margin: 0 auto;
+  background: white;
 }
-.header-logo-link-outer {
-  margin: 0;
+
+.header-logo-link {
+  margin-left: 100px;
+}
+
+.header-right-outer {
+  margin-right: 100px;
+}
+
+
+.header-logo {
+  margin-top: 13px;
+  background-image: image-url("me_diary_logo");
+  background-repeat: no-repeat;
+  background-size: 180px !important;
 }
 
 .header .header-logo {
@@ -15,15 +29,12 @@
   height: 60px;
   text-align: center;
   line-height: 60px;
-  background-image: url("../images/navbar/me_diary_logo.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  // color: transparent;
 }
 
 .header-nav-text-list {
   display: flex;
   margin: 0;
+  justify-content: space-between;
 }
 
 .header-nav-text-list li:first-child {

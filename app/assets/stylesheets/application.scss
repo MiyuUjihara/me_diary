@@ -1,4 +1,10 @@
+@import "bootstrap";
+@import "simple_calendar";
 @import "reset";
 @import "layouts/navbar";
 @import "login/login";
-@import "login/login_test";
+@import "users/show";
+@import "layouts/error_messages";
+@import "diaries/new";
+@import "diaries/index";
+

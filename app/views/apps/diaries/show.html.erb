@@ -1,0 +1,6 @@
+
+<%= link_to "", diary_path(@diary), class: "no-text-decoration"%>
+<%= link_to "", diary_path(@diary.user), class: "black-color no-text-decoration post-user-name"%>
+<strong><%= @diary.user.name %></strong>
+<%= @diary.caption %>
+<%=  link_to "削除", diary_path(@diary), method: :delete, class: "card-link" if @diary.user == current_user %>

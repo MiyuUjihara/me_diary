@@ -54,3 +54,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'psych', '~> 3.1'
 gem 'pry-rails'
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
+gem 'rails-i18n'
+gem 'carrierwave'
+gem 'rmagick'
+gem 'cocoon'
+gem 'simple_calendar', '~> 2.0'

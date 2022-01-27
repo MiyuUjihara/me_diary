@@ -20,7 +20,7 @@ class Apps::ApplicationController < ApplicationController
   def exist_sign_in!
     if signed_in?
       flash[:alert] = "既にログイン済みです"
-      redirect_to root_path 
+      redirect_to apps_root_path 
     end
   end
   

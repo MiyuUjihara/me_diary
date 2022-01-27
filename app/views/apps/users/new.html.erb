@@ -7,22 +7,18 @@
             <div class="form-group">
               <%= f.label   "名前", class: "form_label"  %>
               <%= f.text_field :name, placeholder: "名前", class: "form-control" %>
-              <%= render "partial/erros", errors: @user.errors.full_messages_for(:name) %>
             </div>
             <div class="form-group">
               <%= f.label "メールアドレス", class: "form_label" %>
               <%= f.text_field :email, placeholder: "メールアドレス", class: "form-control" %>
-              <%= render "partial/erros", errors: @user.errors.full_messages_for(:email) %>
             </div>
             <div class="form-group">
               <%= f.label "パスワード", class: "form_label" %>
               <%= f.password_field :password, placeholder: "パスワード", class: "form-control" %>
-              <%= render "partial/erros", errors: @user.errors.full_messages_for(:password) %>
             </div>
             <div class="form-group">
               <%= f.label "再度パスワード", class: "form_label" %>
               <%= f.password_field :password_confirmation, placeholder: "再度パスワード", class: "form-control" %>
-              <%= render "partial/erros", errors: @user.errors.full_messages_for(:password_confirmation) %>
             </div>
             <%= f.submit "新規登録", class: "btn" %>
         <% end %>

@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="content">
+    <%= form_with model: @column, url: admin_columns_path, local: true do |f| %>
+
+      <div class="form-group">
+        <%= f.label "タイトル", class: "form_label"  %>
+        <%= f.text_field :title, class: "form-control", placeholder: "タイトル", value:"" %>
+      </div>
+      <div class="form-group">
+        <%= f.label "内容", class: "form_label"  %>
+        <%= f.text_area :content, class: "captiomn_area", placeholder: "内容"%>
+      </div>
+      <div class="form-group">
+        <%= f.file_field :image%>
+      </div>
+      <%= f.submit "投稿", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

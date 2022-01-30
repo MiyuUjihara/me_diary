@@ -9,6 +9,9 @@ require("@rails/activestorage").start()
 require("channels")
 require('jquery')
 import "cocoon"   //cocoonを動かすための記述
+import '@fortawesome/fontawesome-free/js/all';
+
+
 
 
 

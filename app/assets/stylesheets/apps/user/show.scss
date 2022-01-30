@@ -1,0 +1,73 @@
+.users {
+  width: 100%;
+
+  &-container {
+    padding: 40px 0 50px;
+
+    width: 65%;
+    margin: 0 auto;
+
+    &-link {
+      height: 80px;
+
+      .user-name {
+        font-size: 30px;
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-wrap: wrap;
+
+      .contents {
+        width: 300px;
+        height: 300px;
+        margin: 1px;
+        background: white;
+        border: 1px solid #dfdcdc;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+        overflow: hidden;
+
+        .div {
+          width: 300px;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+
+        .link {
+          text-decoration: none;
+          color: black; 
+        }
+
+        &:hover {
+          cursor: pointer;
+          opacity: 0.5;
+        }
+
+        &-title {
+          width: 280px;
+          height: 28px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        &-date {
+          font-size: 12px;
+        }
+
+        &-image {
+          border: solid 0.5px #dfdcdc;
+        }
+      }
+    }
+
+    &-next {
+      height: 100px;
+    }
+  }
+}

@@ -20,7 +20,7 @@ class Apps::UsersController < Apps::ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
-    @diaries = @user.diaries.order(created_at: :DESC)
+    @diaries = @user.diaries.includes(:photos).order('date DESC').page(params[:page]).per(12)
   end
 
   private

@@ -4,9 +4,6 @@ class Apps::DiariesController < Apps::ApplicationController
   before_action :require_sign_in!, only: [:new, :create, :edit, :upudate, :destroy]
 
   
-  def index
-    @diaries = Diary.limit(10).includes(:user, :photos).order('created_at DESC')
-  end
 
   def new
     @diary = Diary.new
@@ -16,7 +13,7 @@ class Apps::DiariesController < Apps::ApplicationController
   def create
     @diary = Diary.new(diary_params)
     if @diary.save
-      redirect_to apps_diaries_path
+      redirect_to apps_user_path(@diary.user)
       flash[:notice] = "投稿が保存されました"
     else
       flash[:alert] = "投稿に失敗しました"

@@ -1,5 +1,17 @@
 @import "bootstrap";
+@import "slick-theme";
+@import "slick"; 
 @import "simple_calendar";
 @import "reset";
 @import "apps/navbar";
 @import "apps/form";
+@import "apps/diary/index";
+@import "apps/user/show";
+@import "apps/diary/show";
+
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import '@fortawesome/fontawesome-free/scss/v4-shims';

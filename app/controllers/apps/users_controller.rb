@@ -19,7 +19,10 @@ class Apps::UsersController < Apps::ApplicationController
   end
 
   def show
-    @user = User.find_by(id: params[:id])
+    if params[:name] != current_user.name
+      return redirect_to apps_404_path 
+    end
+    @user = User.find_by(name: params[:name])
     @diaries = @user.diaries.includes(:photos).order('date DESC').page(params[:page]).per(12)
   end
 

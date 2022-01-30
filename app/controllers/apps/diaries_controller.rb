@@ -13,7 +13,7 @@ class Apps::DiariesController < Apps::ApplicationController
   def create
     @diary = Diary.new(diary_params)
     if @diary.save
-      redirect_to apps_user_path(@diary.user)
+      redirect_to apps_user_path(@diary.user.name)
       flash[:notice] = "投稿が保存されました"
     else
       flash[:alert] = "投稿に失敗しました"

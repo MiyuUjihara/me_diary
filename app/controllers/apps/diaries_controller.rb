@@ -1,13 +1,11 @@
 class Apps::DiariesController < Apps::ApplicationController
-  before_action :set_diary, only: [:show, :destroy]
+  before_action :set_diary, only: [:show, :edit, :update, :destroy]
   before_action :signed_in?
   before_action :require_sign_in!, only: [:new, :create, :edit, :upudate, :destroy]
 
   
-
   def new
     @diary = Diary.new
-    @diary.photos.build
   end
 
   def create
@@ -21,12 +19,23 @@ class Apps::DiariesController < Apps::ApplicationController
     end
   end
 
-
   def show
   end
 
   def edit
+   
   end
+  
+  def update
+    if @diary.update(diary_params)
+      redirect_to apps_user_path(@diary.user.name)
+      flash[:notice] = "投稿を編集しました"
+    else
+      flash[:alert] = "投稿にの編集に失敗しました"
+      render :edit
+    end
+  end
+
 
   def destroy
     if @diary.user == current_user
@@ -39,7 +48,7 @@ class Apps::DiariesController < Apps::ApplicationController
 
   private
     def diary_params
-      params.require(:diary).permit(:title, :date, :caption, photos_attributes: [:id, :image, :_destroy]).merge(user_id: current_user.id)
+      params.require(:diary).permit(:title, :date, :caption, :image).merge(user_id: current_user.id)
     end
 
     def set_diary

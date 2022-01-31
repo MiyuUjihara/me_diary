@@ -35,21 +35,14 @@ ActiveRecord::Schema.define(version: 2022_01_27_063244) do
   end
 
   create_table "diaries", force: :cascade do |t|
-    t.string "title", default: "no_title"
+    t.string "title"
     t.string "caption", null: false
     t.date "date", null: false
+    t.string "image"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_diaries_on_user_id"
-  end
-
-  create_table "photos", force: :cascade do |t|
-    t.string "image"
-    t.bigint "diary_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["diary_id"], name: "index_photos_on_diary_id"
   end
 
   create_table "todos", force: :cascade do |t|
@@ -72,6 +65,5 @@ ActiveRecord::Schema.define(version: 2022_01_27_063244) do
 
   add_foreign_key "columns", "admin_users"
   add_foreign_key "diaries", "users"
-  add_foreign_key "photos", "diaries"
   add_foreign_key "todos", "admin_users"
 end

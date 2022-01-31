@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="content">
+    <div class="content-inner">
+      <div class="content-right">
+        <div class="form-group">
+          <%= f.label "日記の日付", class: "form_label" %><br>
+          <%= f.date_field :date, class: "form-control", size: "1000x100" %>
+        </div>
+        <div class="form-group">
+          <%= f.label "タイトル", class: "form_label"  %>
+          <%= f.text_field :title, class: "form-control", placeholder: "タイトル" %>
+        </div>
+
+        <div class="form-group image_huga">
+          <%= f.label "思い出の写真", class: "form_label"  %>
+          <%= f.file_field :image, class: "image_area", style:"display:none;" %>
+          <div class="image-feild">
+            <div class="target">
+              <%= image_tag @diary.edit_image_url, width:"100%", height:"200px" %>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="content-left">
+        <div class="form-group">
+        <%= f.label "日記の内容", class: "form_label"  %>
+          <%= f.text_area :caption, class: "caption_area", placeholder: "内容"%>
+        </div>
+      </div>
+    </div>
+    <hr/>
+    <div class="form-group btn-area">
+      <%= f.submit "投稿", class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>

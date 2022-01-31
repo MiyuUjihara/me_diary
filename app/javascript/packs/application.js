@@ -10,10 +10,7 @@ require("channels")
 require('jquery')
 import "cocoon"   //cocoonを動かすための記述
 import '@fortawesome/fontawesome-free/js/all';
-
-
-
-
+require("packs/form")
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

@@ -3,7 +3,9 @@
     <div class="top-conteiner">
       <div class="top-contents">
         <div class="diary-title pa-rl"><%= @diary.get_title %></div>
-        <div class="link-parts">•••</div>
+        <div class="link-parts">
+          <%= link_to "編集", edit_apps_diary_path(@diary) %>
+        </div>
       </div>
     </div>
     <div class="bottom-conteiner">

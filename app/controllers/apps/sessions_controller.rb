@@ -8,7 +8,7 @@ class Apps::SessionsController < Apps::ApplicationController
     user = User.find_by(email: params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      redirect_to apps_user_path(user)
+      redirect_to apps_user_path(user.name)
     else
       flash[:alert] = "メールアドレス又はパスワードが違います"
       render action: :new

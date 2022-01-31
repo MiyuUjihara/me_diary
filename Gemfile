@@ -59,7 +59,5 @@ gem 'jquery-rails'
 gem 'rails-i18n'
 gem 'carrierwave'
 gem 'rmagick'
-gem 'cocoon'
-gem 'simple_calendar', '~> 2.0'
 gem "mini_magick"
 gem 'kaminari'

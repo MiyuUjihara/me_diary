@@ -1,25 +1,4 @@
-<div class="container">
-  <div class="content">
-    <%= form_with model: @diary, url: apps_diaries_path, local: true do |f| %>
-
-      <div class="form-group">
-        <%= f.label "日記の日付", class: "form_label" %><br>
-        <%= f.date_field :date, class: "form-control", size: "1000x100" %>
-      </div>
-      <div class="form-group">
-        <%= f.label "タイトル", class: "form_label"  %>
-        <%= f.text_field :title, class: "form-control", placeholder: "タイトル", value:"" %>
-      </div>
-      <div class="form-group">
-        <div class="form-group">
-          <%= f.text_area :caption, class: "caption_area", placeholder: "内容"%>
-        </div>
-        <%= link_to_add_association "＋思い出の写真を追加", f, :photos, class:"add-to", data: { association_insertion_method: 'append' } %>
-        </div>
-        <%= f.submit "投稿", class: "btn btn-primary" %>
-      </div>
-    <% end %>
-  </div>
-</div>
-
+<%= form_with model: @diary, url: apps_diaries_path, local: true do |f| %>
+  <%= render "apps/diaries/form",  f: f %>
+<% end %>
 

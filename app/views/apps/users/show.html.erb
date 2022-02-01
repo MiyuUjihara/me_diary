@@ -4,21 +4,21 @@
       <h1 class="user-name">@<%= @user.name %></h1>
       <br>
     </div>
-
     <div class="users-container-content">
-
       <% @diaries.each do |diary| %>
         <div class="contents">
-          <%= link_to apps_diary_path(diary), class:"link" do %>
-            <div class="contents-title right-part"><%= diary.get_title %></div>
-            <%= image_tag diary.get_image_url, class: "contents-image", size: '298x250' %>
-            <div class="contents-date right-part"><%= diary.date%></div>
+          <%= link_to apps_diary_path(diary), class:"link", remote: true do %>
+            <%= image_tag diary.get_image_url, class: "contents-image"%>
           <% end %>
-        </div>
+          </div>
       <% end %>
     </div>
     <div class="users-container-next">
       <%= paginate @diaries %>
     </div>
-  </div>
+  </div>  
+</div>
+
+<div id="mask" class="hidden">
+  <div id="modal" class="hidden"></div>
 </div>

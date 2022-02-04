@@ -6,7 +6,7 @@
     <nav class="header-right-outer">
       <ul class="list-unstyled header-nav-text-list">
         <% if current_admin_user %>
-          <li class="button-container"><%= link_to "コラムを書く", "#", class: "button"%></li>
+          <li class="button-container"><%= link_to "コラムを書く", new_admin_column_path, class: "button"%></li>
           <li class="button-container"><%= link_to "Todoを作成する", "#", class: "button"%></li>
           <li class="button-container"><%= link_to "ログアウト", admin_logout_path, method: :delete, class: "button"%></li>
         <% else %>

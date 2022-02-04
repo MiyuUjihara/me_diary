@@ -1,21 +1,21 @@
-<div class="main">
-  <div class="diary-wrapper">
-    <div class="left-conteiner">
-      <div class="left-contents">
-        <div class="diary-image"><%= image_tag @diary.get_image_url, class: "image" %></div>
-      </div>
-    </div>
-    <div class="right-conteiner">
-      <div class="right-contents">
-        <div class="tittle-conteiner">
-          <div class="diary-title pa-rl"><%= @diary.get_title %></div>
-          <div class="link-parts">
-            <%= link_to "•••", edit_apps_diary_path(@diary), class: "btn" %>
-          </div>
-        </div>
-        <div class="diary-caption  pa-rl"><%= @diary.caption %></div>
-        <div class="diary-date pa-rl"><%= @diary.date%></div>
-      </div>
-    </div>
+<div class="show-html">
+  <%= render "show" %>
+</div>
+
+<div id="on_modal" class="hidden om2">
+  <div class="on-mordal-wrapper">
+    <div class="btn_1"><%= link_to "編集", edit_apps_diary_path(@diary), class: "link" %></div>
+    <div class="btn_1 d_btn"><%= link_to "削除", apps_diary_path(@diary), method: :delete, class: "link" %></div>
   </div>
 </div>
+
+<script>
+  $("#modal-btn").on('click', () => {
+    let Boolian = $("#on_modal").hasClass('hidden')
+    if (Boolian) {
+      $("#on_modal").removeClass('hidden')
+    } else {
+      $("#on_modal").addClass('hidden')
+    }
+  });
+</script>

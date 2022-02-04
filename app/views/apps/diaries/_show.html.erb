@@ -10,7 +10,11 @@
         <div class="tittle-conteiner">
           <div class="diary-title pa-rl"><%= @diary.get_title %></div>
           <div class="link-parts">
-            <%= link_to "•••", edit_apps_diary_path(@diary), class: "btn" %>
+            <button id="modal-btn" class="link-parts-btn">
+              <span>
+                 <p class="btn">•••</p>
+              </span>
+            </button>
           </div>
         </div>
         <div class="diary-caption  pa-rl"><%= @diary.caption %></div>

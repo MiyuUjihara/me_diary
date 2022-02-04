@@ -1,19 +1,41 @@
 // モーダルを取得
 var modal = document.getElementById('modal');
 
+// 閉じるボタンを取得
+var button = document.getElementById('close-btn');
+
 // マスクを取得
 var mask = document.getElementById('mask');
 
+var modal2 = document.getElementById('link-modal');
+
 // モーダルの中身をshowビューに置き換えます。
 // 部分テンプレートのパス、localsの値はアプリにより異なります。
-modal.innerHTML = '<%= escape_javascript(render 'detailed_modal' ) %>';
+modal.innerHTML = '<%= escape_javascript(render 'show' ) %>';
 
 // hiddenクラスを消してモーダルとマスクを表示させます。
 modal.classList.remove('hidden');
+button.classList.remove('hidden');
 mask.classList.remove('hidden');
+$('body').css('overflow-y', 'hidden'); 
+
+
 
 // モーダルの外側（マスク）をクリックするとhiddenクラスが書き込まれ、モーダルとマスクが再び非表示となります。
-mask.addEventListener('click', () => {
+$("#mask, #close-btn").on('click', () => {
   modal.classList.add('hidden');
+  button.classList.add('hidden');
   mask.classList.add('hidden');
-  });
+  $('body').css('overflow-y','auto'); 
+  $("#on_modal").addClass('hidden')
+});
+
+
+$("#modal-btn").on('click', () => {
+  let Boolian = $("#on_modal").hasClass('hidden')
+  if (Boolian) {
+    $("#on_modal").removeClass('hidden')
+  } else {
+    $("#on_modal").addClass('hidden')
+  }
+});

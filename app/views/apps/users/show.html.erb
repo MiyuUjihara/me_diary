@@ -6,19 +6,30 @@
     </div>
     <div class="users-container-content">
       <% @diaries.each do |diary| %>
+
         <div class="contents">
           <%= link_to apps_diary_path(diary), class:"link", remote: true do %>
             <%= image_tag diary.get_image_url, class: "contents-image"%>
           <% end %>
+        </div>
+
+        <%# 詳細モーダル %>
+        <div id="mask" class="hidden"></div>
+        <div id="close-btn" class="hidden">×閉じる</div>
+        <div id="modal" class="hidden"></div>
+
+        <%# 編集&削除モーダル %>
+        <div id="on_modal" class="hidden om1">
+          <div class="on-mordal-wrapper">
+            <div class="btn_1"><%= link_to "編集", edit_apps_diary_path(diary), class: "link" %></div>
+            <div class="btn_1 d_btn"><%= link_to "削除", apps_diary_path(diary), method: :delete, class: "link" %></div>
           </div>
+        </div>
+
       <% end %>
     </div>
     <div class="users-container-next">
       <%= paginate @diaries %>
     </div>
   </div>  
-</div>
-
-<div id="mask" class="hidden">
-  <div id="modal" class="hidden"></div>
 </div>

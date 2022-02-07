@@ -1,0 +1,89 @@
+
+
+// フォーム関係
+
+// textarea {
+//   border: solid 1px #bbb;;
+//   padding: 10px 8px 0;
+//   height: 465px;
+//   width: 100%;
+//   font-size: 15px;
+//   line-height: 1;
+//   border-radius: 3px;
+//   resize: none;
+
+// }
+.users-container {
+
+  .users-content {
+    background: white;
+    padding: 20px;
+    width : 50%;
+    margin: 30px auto;
+    border-radius: 3px;
+
+    &-inner {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .users-content-h1 {
+      color: rgb(226, 153, 17);
+      text-align: center;
+    }
+
+    .users-simple-content {
+      margin: 20px;
+
+      .form-group {
+        
+        .form_label {
+          font-weight: bold;
+        } 
+  
+        .form-control {
+          border: solid 1px #bbb;
+          padding: 0 8px;
+          height: 34px;
+          width: 97%;
+          font-size: 15px;
+          line-height: 1;
+          border-radius: 3px;
+        }
+      }
+    }
+
+    .btn-group{
+      width: 100%;
+
+      .btn {
+        margin:0 auto;
+        border: 0px solid;
+        border-radius: 3px;
+        background: rgb(185, 111, 61);
+        margin-top: 10px;
+        height: 40px;
+        width: 30%;
+  
+        :active {
+          color: #fff;
+          background-color: rgb(185, 111, 61);
+          border-color: rgb(185, 111, 61);
+        }
+      }
+    }
+
+    hr {
+      margin: 10px 0;
+      border: 0;
+      border-top: 1px solid #eee;
+    }
+
+    .form_link {
+      text-align: right;
+      .link {
+        text-decoration:none; 
+      }
+    }
+  }
+}

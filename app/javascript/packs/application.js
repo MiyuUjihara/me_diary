@@ -8,8 +8,6 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require('jquery')
-import "cocoon"   //cocoonを動かすための記述
-import '@fortawesome/fontawesome-free/js/all';
 require("packs/form")
 
 
@@ -19,3 +17,7 @@ require("packs/form")
 //
 const images = require.context('../images', true)
 const imagePath = (name) => images(name, true)
+require("trix")
+require("@rails/actiontext")
+
+window.jQuery = window.$ = require('jquery')

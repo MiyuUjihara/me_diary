@@ -4,8 +4,12 @@
 
 <div id="on_modal" class="hidden om2">
   <div class="on-mordal-wrapper">
-    <div class="btn_1"><%= link_to "編集", edit_apps_diary_path(@diary), class: "link" %></div>
-    <div class="btn_1 d_btn"><%= link_to "削除", apps_diary_path(@diary), method: :delete, class: "link" %></div>
+    <%= link_to edit_apps_diary_path(@diary), class: "link"  do %>
+      <div class="btn_1">編集</div>
+    <% end %>
+    <%= link_to apps_diary_path(@diary), method: :delete, class: "link" do %>
+      <div class="btn_1 d_btn">削除</div>
+    <% end %>
   </div>
 </div>
 

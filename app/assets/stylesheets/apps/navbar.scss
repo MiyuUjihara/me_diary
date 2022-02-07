@@ -50,6 +50,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000;
 }
 
 .button-container .button {
@@ -63,4 +64,29 @@
   height:45px;
   line-height:45px;
   text-decoration: none;
+}
+
+.button2 {
+  min-width: 128px;
+  min-height: 40px;
+  size: 40px;
+  color: #000;
+  background-color: #fff;
+  text-align:center;
+  height:45px;
+  line-height:45px;
+  text-decoration: none;
+
+  :hover {
+    color: #000;
+  } 
+
+  .svg-inline--fa {
+    font-size: 23px;
+  }
+}
+
+a:hover {
+  color: #000;
+  text-decoration: underline;
 }

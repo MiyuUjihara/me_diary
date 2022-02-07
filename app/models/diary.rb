@@ -1,5 +1,6 @@
 class Diary < ApplicationRecord
   belongs_to :user
+  has_rich_text :caption
 
   validates :caption, presence: true
   validates :date,  presence: true

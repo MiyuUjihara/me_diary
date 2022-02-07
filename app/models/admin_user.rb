@@ -1,7 +1,6 @@
 class AdminUser < ApplicationRecord  
   has_secure_password
   has_many :todos, dependent: :destroy
-
   has_many :columns, dependent: :destroy
 
   

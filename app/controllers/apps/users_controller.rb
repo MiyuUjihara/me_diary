@@ -23,6 +23,7 @@ class Apps::UsersController < Apps::ApplicationController
       return redirect_to apps_404_path 
     end
     @user = User.find_by(name: params[:name])
+
     @diaries = @user.diaries.order('date DESC').page(params[:page]).per(9)
     @diary = Diary.find_by(id: params[:id])
   end

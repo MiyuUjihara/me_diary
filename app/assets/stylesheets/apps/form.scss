@@ -3,13 +3,13 @@
 // フォーム関係
 
 textarea {
-  border: solid 1px #ccc;;
+  border: solid 1px #bbb;;
   padding: 10px 8px 0;
   height: 465px;
   width: 100%;
   font-size: 15px;
   line-height: 1;
-  border-radius: 5px;
+  border-radius: 3px;
   resize: none;
 
 }
@@ -19,7 +19,7 @@ textarea {
   padding: 20px;
   width : 70%;
   margin: 30px auto;
-  border-radius: 10px;
+  border-radius: 3px;
 
   .content-inner {
     display: flex;
@@ -42,13 +42,13 @@ textarea {
     } 
 
     .form-control {
-      border: solid 1px #ccc;;
+      border: solid 1px #bbb;
       padding: 0 8px;
       height: 34px;
-      width: 100%;
+      width: 97%;
       font-size: 15px;
       line-height: 1;
-      border-radius: 5px;
+      border-radius: 3px;
     }
 
     .image-feild {
@@ -58,7 +58,8 @@ textarea {
       text-align: center;
       line-height: 300px;
       margin: 0 auto;
-      border-radius: 5px;
+      border: solid 1px #bbb; 
+      border-radius: 3px;
     }
     .image-feild:hover {
       cursor: pointer;
@@ -75,10 +76,17 @@ textarea {
   .btn {
     margin:0 auto;
     border: 0px solid;
+    border-radius: 3px;
     background: rgb(185, 111, 61);
     margin-top: 10px;
     height: 40px;
     width: 20%;
+
+    :active {
+      color: #fff;
+      background-color: rgb(185, 111, 61);
+      border-color: rgb(185, 111, 61);
+    }
   }
 
   hr {
@@ -93,4 +101,21 @@ textarea {
       text-decoration:none; 
     }
   }
+}
+
+trix-editor {
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  margin: 0;
+  padding: 0.4em 0.6em;
+  min-height: 368px;
+  outline: none;
+}
+
+trix-toolbar .trix-button-row {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  overflow-x: auto;
+  flex-direction: row;
 }

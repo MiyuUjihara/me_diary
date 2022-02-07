@@ -1,6 +1,8 @@
 class Column < ApplicationRecord
-  belongs_to :admin_users
+  has_rich_text :content
+  belongs_to :admin_user
   mount_uploader :image, ImageUploader
+
 
   validates :title,   presence: true, uniqueness: true
   validates :content, presence: true

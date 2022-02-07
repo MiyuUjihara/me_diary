@@ -1,0 +1,37 @@
+<%
+=begin
+%>
+<% @column.each do |column| %>
+  <%= column.title %><br>
+  <%= column.content %><br>
+  <%= image_tag column.image.url %><br>
+<% end %>
+<%
+=end
+%>
+
+<article class="column-wrapper">
+  <div class="content-inner">
+    <h2 class="heading__new-posts">新着記事</h2>
+    <div class="new-posts__container">
+      <% @column.each do |column| %>
+        <ul class="post-list post-list-portrate posts">
+          <li class="post">
+            <%= link_to admin_column_path(column), class: "post__inner" do %>
+              <div class="post__thumbnail lazyloaded"><%= image_tag column.image.url, class: "img", size: "280x300;" %></div>
+              <div class="post__body">
+                <div class="post__title"><%= column.title %></div>
+              </div>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to class: "writter" do%>
+              <i class="fas fa-pen-nib"></i>
+              <%= column.admin_user.name %>
+            <% end %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</article>

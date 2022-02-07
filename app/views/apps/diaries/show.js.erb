@@ -7,13 +7,14 @@ var button = document.getElementById('close-btn');
 // マスクを取得
 var mask = document.getElementById('mask');
 
+//モーダルオンモーダルを取得
 var modal2 = document.getElementById('link-modal');
 
 // モーダルの中身をshowビューに置き換えます。
 // 部分テンプレートのパス、localsの値はアプリにより異なります。
 modal.innerHTML = '<%= escape_javascript(render 'show' ) %>';
 
-// hiddenクラスを消してモーダルとマスクを表示させます。
+// hiddenクラスを消してモーダルとマスクを表示maskさせます。
 modal.classList.remove('hidden');
 button.classList.remove('hidden');
 mask.classList.remove('hidden');
@@ -27,15 +28,38 @@ $("#mask, #close-btn").on('click', () => {
   button.classList.add('hidden');
   mask.classList.add('hidden');
   $('body').css('overflow-y','auto'); 
-  $("#on_modal").addClass('hidden')
+  $("#on_modal").addClass('hidden');
+
+  let content = `
+      <div></div>
+  `
+  $(".on-mordal-wrapper").replaceWith(content);
 });
 
 
-$("#modal-btn").on('click', () => {
+
+$("#modal-btn").on('click', (e) => {
+  let targetId = e.target.id
+
+  let html = `
+      <div class="on-mordal-wrapper">
+        <a href="/apps/diaries/${targetId}/edit" class="link">編集</a>
+      </div>
+      <div class="on-mordal-wrapper">
+        <a href="/apps/diaries/${targetId}" data-method="delete" class="link">削除</a>
+      </div>
+  `
+  let content = `
+      <div></div>
+  `
+
   let Boolian = $("#on_modal").hasClass('hidden')
   if (Boolian) {
     $("#on_modal").removeClass('hidden')
+    $("#on_modal").append(html)
   } else {
     $("#on_modal").addClass('hidden')
+    $(".on-mordal-wrapper").replaceWith(content);
   }
+
 });

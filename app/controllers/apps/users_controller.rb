@@ -11,7 +11,7 @@ class Apps::UsersController < Apps::ApplicationController
     if user.save
       session[:user_id] = user.id
       flash[:notice] = "新規登録に成功しました"
-      redirect_to apps_user_path(user)
+      redirect_to apps_user_path(user.name)
     else
       flash[:alert] = "新規登録に失敗しました"
       render action: :new

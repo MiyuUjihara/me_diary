@@ -1,19 +1,19 @@
-<div class="container">
-  <div class="content">
+<div class="admin-column-container">
+  <div class="admin-column-content">
     <%= form_with model: @column, url: admin_columns_path, local: true do |f| %>
-      <div class="form-group">
-        <%= f.label "タイトル", class: "form_label" %>
+      <div class="admin-form-group">
+        <%= f.label "タイトル", class: "admin-form_label" %>
         <%= f.text_field :title, class: "form-control", placeholder: "タイトル", value:"" %>
       </div>
       <div class="field">
-        <%= f.label :content %>
+        <%= f.label "記事内容", class: "admin-form_label" %>
         <%= f.rich_text_area :content %>
       </div>
-      <div class="form-group">
-        <%= f.label "サムネイル画像" %><br>
+      <div class="admin-form-group">
+        <%= f.label "サムネイル画像" , class: "admin-form_label" %><br>
         <%= f.file_field :image %>
       </div>
-       <div class="form-group btn-area">
+       <div class="admin-form-group admin-btn-area">
          <%= f.submit "投稿", class: "btn" %>
       </div>
     <% end %>

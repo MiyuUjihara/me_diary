@@ -11,13 +11,15 @@
           <div class="diary-title pa-rl"><%= @diary.get_title %></div>
           <div class="link-parts">
             <button id="modal-btn" class="link-parts-btn">
-              <span>
-                 <p class="btn" id=<%="#{@diary.id}"%>>•••</p>
-              </span>
+              <p class="set-btn" id=<%="#{@diary.id}"%>>•••</p>
             </button>
           </div>
         </div>
-        <div class="diary-caption  pa-rl"><%= @diary.caption %></div>
+        <div class="caption-conteiner">
+          <div class="diary-caption  pa-rl">
+            <%= @diary.caption %>
+          </div>
+        </div>
         <div class="diary-date pa-rl"><%= @diary.date%></div>
       </div>
     </div>

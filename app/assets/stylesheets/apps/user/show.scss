@@ -1,84 +1,82 @@
 .users {
   width: 100%;
-
-  &-container {
-    padding: 40px 0 50px;
-    width: 75%;
-    margin: 0 auto;
-
-    &-link {
-      height: 80px;
-      margin-bottom: 28px;
-      border-bottom: solid 1px rgb(197, 197, 197);
-
-      .user-name {
-        font-size: 30px;
-        padding-left: 15px;
-      }
-    }
-
-    &-content {
-      display: flex;
-      flex-wrap: wrap;
-
-      .contents {
-        width: 300px;
-        height: 300px;
-        margin: 0px 20px 20px 0px;
-        padding-right: 20px;
-        background: white;
-        border: 1px solid #dfdcdc;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: baseline;
-        overflow: hidden;
-        border-radius: 5px;
-        position: relative;
-
-        .div {
-          width: 300px;
-          overflow: hidden;
-          white-space: nowrap;
-        }
-
-        .link {
-          text-decoration: none;
-          color: black; 
-        }
-
-        &:hover {
-          cursor: pointer;
-          opacity: 0.5;
-        }
-
-        &-title {
-          width: 280px;
-          height: 28px;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-        }
-
-        &-date {
-          font-size: 12px;
-        }
-
-        &-image {
-          position: absolute;
-          // border: solid 0.5px #dfdcdc;
-          width: 100%;
-          height: 100%;
-        }
-      }
-    }
-
-    &-next {
-      height: 100px;
-    }
-  }
 }
+.users-container {
+  padding: 40px 0 50px;
+  width: 75%;
+  margin: 0 auto;
+}
+.users-container-link {
+  height: 80px;
+  margin-bottom: 28px;
+  border-bottom: solid 1px rgb(197, 197, 197);
+}
+.user-name {
+  font-size: 30px;
+  padding-left: 15px;
+}
+
+.users-container-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contents {
+  width: 300px;
+  height: 300px;
+  margin: 0px 20px 20px 0px;
+  padding-right: 20px;
+  background: white;
+  border: 1px solid #dfdcdc;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  overflow: hidden;
+  border-radius: 5px;
+  position: relative;
+}
+
+.div {
+  width: 300px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.link {
+  text-decoration: none;
+  color: black; 
+}
+
+:hover {
+  cursor: pointer;
+ 
+}
+
+.contents-title {
+  width: 280px;
+  height: 28px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contents-date {
+  font-size: 12px;
+}
+
+.contents-image {
+  position: absolute;
+  // border: solid 0.5px #dfdcdc;
+  width: 100%;
+  height: 100%;
+}
+
+.contents-next {
+  height: 100px;
+}
+
 
 #mask {
   background-color: rgba(0, 0, 0, 0.5);
@@ -90,7 +88,6 @@
   z-index: 1;
   width: 100vw;
   height: 100vh; 
-
 }
 
 #close-btn {
@@ -108,104 +105,105 @@
 
 
 #modal {
-    position: fixed;   /* スクロールで移動しないようmodalの位置を固定します */
-    top: 10vh;
-    /* 以下3行：モーダルを左右中央揃えにする方法 */
-    left: 0;
-    right: 0;
-    margin: auto;
-    transform: translate(0, 0) scale(1);
-    transition: 0.2s;   /* transitionでアニメーションを作成 */
-    z-index: 2;   /* マスクより上に重なるようにする */
-    width: 65vw;
-    height: 45vw;  /* showビューの幅に合わせて設定 */
+  position: fixed;   /* スクロールで移動しないようmodalの位置を固定します */
+  top: 10vh;
+  /* 以下3行：モーダルを左右中央揃えにする方法 */
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform: translate(0, 0) scale(1);
+  transition: 0.2s;   /* transitionでアニメーションを作成 */
+  z-index: 2;   /* マスクより上に重なるようにする */
+  width: 65vw;
+  height: 45vw;  /* showビューの幅に合わせて設定 */
+}
+
+/* hiddenクラスで最初は表示されないようにする */
+#mask.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#close-btn.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#modal.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0) scale(0.8);   /* 大きさ0.8倍から等倍にモーダルが拡大される */
+}
+
+.om1 {
+  position: fixed;
+  top: 10vh;
+  right: 164px;
+  transform: translate(0, 0) scale(1);
+  transition: 0.2s;
+  z-index: 4;
+  width: 85px;
+  background: #ffff;
+  border: solid 1px #dfdcdc;
+  border-radius: 5px;
+}
+
+.on-mordal-wrapper {
+  height: 50%;
+  text-align: center;
+  // padding: 7px;
+  color: rgb(32, 32, 32);
+  border: solid 0.5px #dfdcdc;
+}
+
+.d_btn {
+  border-top: solid 1px #dfdcdc;
+}
+
+.link {
+  color: black;
+
+  :hover {
+    cursor: pointer;
+    text-decoration: none;
   }
+}
 
-  /* hiddenクラスで最初は表示されないようにする */
-  #mask.hidden {
-    opacity: 0;
-    visibility: hidden;
-  }
 
-  #close-btn.hidden {
-    opacity: 0;
-    visibility: hidden;
-  }
+.om2 {
+  position: absolute;
+  top: 130px;
+  right: 132px;
+  transform: translate(0, 0) scale(1);
+  transition: 0.2s;
+  z-index: 1;
+  width: 80px;
+  background: #ffff;
+  border: solid 1px #dfdcdc;
+  border-radius: 5px;
+}
 
-  #modal.hidden {
-    opacity: 0;
-    visibility: hidden;
-    transform: translate(0, 0) scale(0.8);   /* 大きさ0.8倍から等倍にモーダルが拡大される */
-  }
+.btn_1 {
+  text-align: center;
+  padding: 7px;
+  color: rgb(32, 32, 32);
+}
 
-  .om1 {
-    position: fixed;
-    top: 10vh;
-    right: 152px;
-    transform: translate(0, 0) scale(1);
-    transition: 0.2s;
-    z-index: 4;
-    width: 100px;
-    height: 80px;
-    background: #ffff;
-    border: solid 1px #dfdcdc;
-    border-radius: 5px;
-    
-    .on-mordal-wrapper {
-      height: 50%;
-      text-align: center;
-      padding: 7px;
-      color: rgb(32, 32, 32);
-      border: solid 0.5px #dfdcdc;
-    }
+.d_btn {
+  border-top: solid 1px #dfdcdc;
+}
 
-    .d_btn {
-      border-top: solid 1px #dfdcdc;
-    }
+.link {
+  color: black;
+  height: 100%;
+  width: 100%;
+}
 
-    .link {
-      color: black;
+#on_modal.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
 
-      :hover {
-        cursor: pointer;
-        text-decoration: none;
-      }
-    }
-  }
-
-  .om2 {
-    position: absolute;
-    top: 130px;
-    right: 116px;
-    transform: translate(0, 0) scale(1);
-    transition: 0.2s;
-    z-index: 1;
-    width: 100px;
-    height: 80px;
-    background: #ffff;
-    border: solid 1px #dfdcdc;
-    border-radius: 5px;
-
-    .btn_1 {
-      height: 50%;
-      width: 100%;
-      text-align: center;
-      padding: 7px;
-      color: rgb(32, 32, 32);
-    }
-
-    .d_btn {
-      border-top: solid 1px #dfdcdc;
-    }
-
-    .link {
-      color: black;
-      height: 100%;
-      width: 100%;
-    }
-  }
-
-  #on_modal.hidden {
-    opacity: 0;
-    visibility: hidden;
-  }
+.pgination {
+  display: flex;
+}

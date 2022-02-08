@@ -1,8 +1,8 @@
-<div class="container">
-  <div class="content">
+<div class="users-container">
+  <div class="users-content">
     <h1>管理者ログイン</h1>
-    <div class="content-inner">
-      <div class="simple-content">
+    <div class="users-content-inner">
+      <div class="users-simple-content">
         <%= form_with scope: :session, class: "new-user", local: true do |f| %>
             <div class="form-group">
               <%= f.label "メールアドレス", class: "form_label"  %>
@@ -12,7 +12,9 @@
               <%= f.label "パスワード", class: "form_label" %>
               <%= f.password_field :password, placeholder: "パスワード", class: "form-control" %>
             </div>
-            <%= f.submit "ログイン", class: "btn btn-block btn-with-margin" %>
+            <div class="btn-group">
+              <%= f.submit "ログイン", class: "btn btn-block btn-with-margin" %>
+            </div>
         <% end %>
       </div>
       <hr>

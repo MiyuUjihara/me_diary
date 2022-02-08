@@ -2,7 +2,7 @@ class Admin::ColumnsController < Admin::ApplicationController
   before_action :set_column, only: [:show, :edit, :update, :destroy]
 
   def index
-    @column = Column.all
+    @column = Column.all.order('created_at DESC')
   end
 
   def new

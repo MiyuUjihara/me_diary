@@ -63,3 +63,5 @@ gem "mini_magick"
 gem 'kaminari'
 gem 'actiontext'
 gem 'image_processing'
+gem 'ancestry'
+gem 'active_hash'

@@ -1,6 +1,6 @@
 <div class="admin-column-container">
   <div class="admin-column-content">
-    <%= form_with model: @column, url: admin_columns_path, local: true do |f| %>
+    <%= form_with model: @column, url: admin_column_path(@column), method: :put, local: true do |f| %>
       <%= render "admin/columns/column_form",  f: f %>
     <% end %>
   </div>

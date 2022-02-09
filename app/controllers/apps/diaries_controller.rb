@@ -27,7 +27,6 @@ class Apps::DiariesController < Apps::ApplicationController
   end
 
   def edit
-
   end
   
   def update

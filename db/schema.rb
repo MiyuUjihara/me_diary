@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2022_02_05_154020) do
     t.string "title", null: false
     t.text "content"
     t.string "image", null: false
+    t.integer "category_id", null: false
     t.bigint "admin_user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -80,6 +81,7 @@ ActiveRecord::Schema.define(version: 2022_02_05_154020) do
     t.string "title", null: false
     t.text "content"
     t.string "image", null: false
+    t.integer "category_id", null: false
     t.bigint "admin_user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

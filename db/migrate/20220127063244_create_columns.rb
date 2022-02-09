@@ -4,6 +4,7 @@ class CreateColumns < ActiveRecord::Migration[6.0]
       t.string :title,  null: false
       t.text :content
       t.string :image, null: false
+      t.integer :category_id, null: false
       t.references :admin_user, foreign_key: true, null: false
       t.timestamps
     end

@@ -1,4 +1,7 @@
 class Column < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :category
+
   has_rich_text :content
   belongs_to :admin_user
   mount_uploader :image, ImageUploader

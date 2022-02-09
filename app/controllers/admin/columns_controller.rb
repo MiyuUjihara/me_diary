@@ -2,7 +2,7 @@ class Admin::ColumnsController < Admin::ApplicationController
   before_action :set_column, only: [:show, :edit, :update, :destroy]
 
   def index
-    @column = Column.all.order('created_at DESC')
+    @column = Column.limit(20).order('created_at DESC')
   end
 
   def new
@@ -27,15 +27,28 @@ class Admin::ColumnsController < Admin::ApplicationController
   end
 
   def update
+    if @column.update(column_params)
+      redirect_to admin_columns_path
+      flash[:notice] = "投稿を編集しました"
+    else
+      flash[:alert] = "投稿にの編集に失敗しました"
+      render :edit
+    end
   end
 
   def destroy
+    if @column.user == current_admin_user
+      flash[:notice] = "日記が削除されました" if @column.destroy
+    else
+      flash[:alert] = "日記の削除に失敗しました"
+    end
+    redirect_to admin_columns_path
   end
 
   private
 
     def column_params
-      params.require(:column).permit(:title, :content, :image).merge(admin_user_id: current_admin_user.id)
+      params.require(:column).permit(:title, :content, :image, :category_id).merge(admin_user_id: current_admin_user.id)
     end
 
     def set_column

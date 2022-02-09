@@ -1,19 +1,26 @@
-<div class="header">
-  <div class="header-inner">
-
-    <%= link_to "管理画面", admin_root_path, class: "header-logo-link"%>
-
-    <nav class="header-right-outer">
-      <ul class="list-unstyled header-nav-text-list">
-        <% if current_admin_user %>
-          <li class="button-container"><%= link_to "コラムを書く", new_admin_column_path, class: "button"%></li>
-          <li class="button-container"><%= link_to "Todoを作成する", "#", class: "button"%></li>
-          <li class="button-container"><%= link_to "ログアウト", admin_logout_path, method: :delete, class: "button"%></li>
-        <% else %>
-          <li class="button-container"><%= link_to "ログイン", admin_login_path, class: "button"%></li>
-          <li class="button-container"><%= link_to "管理者登録", new_admin_user_path, class: "button"%></li>
-        <% end %>
-      </ul>
-    </nav>
+<div class="admin-header">
+  <div class="admin-header-inner">
+    <%= link_to  admin_root_path, class: "admin-header-logo-link" do %>
+      <div class="admin-header-logo"></div>
+    <% end %>
+    <div class="job-container">
+      <nav class="admin-header-right-outer">
+        <ul class="list-unstyled header-nav-text-list">
+          <% if current_admin_user %>
+            <li class="admin-button-container"><%= link_to "コラムを書く", new_admin_column_path, class: "admin-button"%></li>
+            <li class="admin-button-container"><%= link_to "Todoを作成する", "#", class: "admin-button"%></li>
+            <li class="admin-button-container"><%= link_to "ログアウト", admin_logout_path, method: :delete, class: "admin-button"%></li>
+          <% else %>
+            <li class="admin-button-container"><%= link_to "ログイン", admin_login_path, class: "admin-button"%></li>
+            <li class="admin-button-container"><%= link_to "管理者登録", new_admin_user_path, class: "admin-button"%></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+    <div class="admin-user-container">
+      <% if current_admin_user %>
+        <i class="far fa-user-circle"></i><%= current_admin_user.name %>
+      <% end %>
+    </div>
   </div>
 </div>

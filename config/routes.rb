@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   namespace :apps do
     root 'homes#index'
+    get "category_search", to: "homes#category_search"
+
     get '/404', to: 'homes#error'
     get '/login', to: 'sessions#new'
     post '/login', to: 'sessions#create'

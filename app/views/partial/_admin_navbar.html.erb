@@ -1,11 +1,14 @@
-<div class="admin-header">
+<%
+=begin
+%>
+<div id="page-wrapper", class="admin-header open" ng-class="{'open': toggle}", >
   <div class="admin-header-inner">
     <%= link_to  admin_root_path, class: "admin-header-logo-link" do %>
       <div class="admin-header-logo"></div>
     <% end %>
-    <div class="job-container">
+    <div class="job-container", id="sidebar-wrapper">
       <nav class="admin-header-right-outer">
-        <ul class="list-unstyled header-nav-text-list">
+        <ul class="list-unstyled header-nav-text-list sidebar">
           <% if current_admin_user %>
             <li class="admin-button-container"><%= link_to "コラムを書く", new_admin_column_path, class: "admin-button"%></li>
             <li class="admin-button-container"><%= link_to "Todoを作成する", "#", class: "admin-button"%></li>
@@ -24,3 +27,51 @@
     </div>
   </div>
 </div>
+<%
+=end
+%>
+
+  <div id="page-wrapper" ng-class="{'open': toggle}", class="open">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar">
+        <li class="sidebar-main">
+          <a ng-click="toggleSidebar()">
+            Dashboard
+            <span class="menu-icon glyphicon glyphicon-transfer"></span>
+          </a>
+        </li>
+        <li class="sidebar-title"><span>NAVIGATION</span></li>
+        <li class="sidebar-list">
+          <a href="#">Dashboard <span class="menu-icon fa fa-tachometer"></span></a>
+        </li>
+        <li class="sidebar-list">
+          <%= link_to "コラムを書く", new_admin_column_path, class: "sidebar-button" %>
+        </li>
+        <li class="sidebar-list">
+          <%= link_to "ToDoを作成", new_admin_column_path %>
+        </li>
+      </ul>
+    </div>
+    <!-- End Sidebar -->
+
+    <div id="content-wrapper">
+      <div class="page-content">
+
+        <!-- Header Bar -->
+        <div class="row header">
+          <div class="col-xs-12">
+          <nav class="admin-header-outer">
+            <ul class="list-unstyled header-nav-text-list">
+              <% if current_admin_user %>
+                <li class="admin-button-container"><%= link_to "@#{current_admin_user.name}", class: "admin-button"%></li>
+                <li class="admin-button-container"><%= link_to "ログアウト", admin_logout_path, method: :delete, class: "admin-button"%></li>
+              <% else %>
+                <li class="admin-button-container"><%= link_to "ログイン", admin_login_path, class: "admin-button"%></li>
+                <li class="admin-button-container"><%= link_to "管理者登録", new_admin_user_path, class: "admin-button"%></li>
+              <% end %>
+            </ul>
+          </nav>
+          </div>
+        </div>
+        <!-- End Header Bar -->

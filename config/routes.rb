@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get "category_search", to: "homes#category_search"
 
     get '/404', to: 'homes#error'
+    get '/column/:id', to: "homes#show"
     get '/login', to: 'sessions#new'
     post '/login', to: 'sessions#create'
     delete '/logout', to: 'sessions#destroy'

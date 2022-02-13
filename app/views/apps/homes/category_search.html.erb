@@ -1,19 +1,27 @@
-<div><%= "#{@category.name}" %>のカテゴリ一覧</div>
-<% @columns.each do |column| %>
-  <ul class="post-list post-list-portrate posts">
-    <li class="post">
-      <%= link_to admin_column_path(column), class: "post__inner" do %>
-        <div class="post__thumbnail lazyloaded"><%= image_tag column.image.url, class: "img", size: "280x300;" %></div>
-        <div class="post__body">
-          <div class="post__title"><%= column.title %></div>
+<div class="category-search-wrapper">
+  <h1 class="category-title"><%= "#{@category.name}" %></h1>
+  <div class="category-posts">
+    <ul class="post-list post-list-portrate posts">
+      <% @columns.each do |column| %>
+        <div class="posts-wrapper">
+          <li class="post">
+            <%= link_to apps_path(column), class: "post__inner" do %>
+              <div class="post__thumbnail lazyloaded"><%= image_tag column.image.url, class: "img" %></div>
+              <div class="post__body">
+                <div class="post__title"><%= column.title %></div>
+              </div>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to class: "writter" do%>
+              <i class="fas fa-pen-nib"></i>
+              <%= column.admin_user.name %>
+            <% end %>
+          </li>
         </div>
       <% end %>
-    </li>
-    <li>
-      <%= link_to class: "writter" do%>
-        <i class="fas fa-pen-nib"></i>
-        <%= column.admin_user.name %>
-      <% end %>
-    </li>
-  </ul>
-<% end %>
+    </ul>
+  </div>
+</div>
+
+  

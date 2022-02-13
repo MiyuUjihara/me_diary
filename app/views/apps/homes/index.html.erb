@@ -1,5 +1,49 @@
-<% Category.all.each do |category| %>
-  <%= link_to apps_category_search_path(category_id: category.id) do%>
-   <div><%= category.name %></div>
-  <% end %>
-<% end %>
+<article class="column-wrapper category-search-wrapper">
+  <h2 class="heading__new-posts">新着記事</h2>
+  <div class="content-inner category-posts">
+    <div class="new-posts__container">
+      <ul class="post-list post-list-portrate posts">
+        <% @column.each do |column| %>
+          <div class="posts-wrapper">
+            <li class="post">
+              <%= link_to apps_path(column), class: "post__inner" do %>
+                <div class="post__thumbnail lazyloaded"><%= image_tag column.image.url, class: "img" %></div>
+                <div class="post__body">
+                  <div class="post__title"><%= column.title %></div>
+                </div>
+                <li>
+                  <%= link_to class: "writter" do%>
+                    <i class="fas fa-pen-nib"></i>
+                    <%= column.admin_user.name %>
+                  <% end %>
+                </li>
+              <% end %>
+            </li>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</article>
+
+
+<div class="apps-column-wrapper">
+  <div class="apps-column-inner">
+    <div class="heading__categories">
+      <h2>カテゴリ一覧</h2>
+    </div>
+    <ul class= "column-categories">
+      <% Category.all.each_with_index do |category, i| %>
+        <% next if i.zero? %>
+        <li class="column-category-parts">
+          <%= link_to apps_category_search_path(category_id: category.id) do%>
+            <div class="category-link-parts">
+              <%= image_tag category.url, class: "category-image" %>
+              <p class="category-name"><%= category.name %></p>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

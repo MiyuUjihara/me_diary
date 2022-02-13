@@ -1,5 +1,10 @@
 class Apps::HomesController < Apps::ApplicationController
   def index
+    @column = Column.limit(20).order('created_at DESC')
+  end
+
+  def show
+    @column = Column.find_by(id: params[:id])
   end
 
   def category_search

@@ -91,6 +91,7 @@ textarea {
   width: 70%;
   margin: 30px auto;
 }
+
 .users_btn {
   margin:0 auto;
   border: 0px solid;
@@ -105,12 +106,14 @@ textarea {
   border: 0px solid;
   border-radius: 3px;
   background: rgb(185, 111, 61);
+  color: white;
   height: 40px;
   width: 20%;
 }
 
 .btn:active {
   color: #fff;
+  opacity: 0.8;
   background-color: rgb(185, 111, 61);
   border-color: rgb(185, 111, 61);
 }

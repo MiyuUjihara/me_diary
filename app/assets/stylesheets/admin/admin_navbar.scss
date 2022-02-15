@@ -62,19 +62,15 @@
 //Sidebar
 #page-wrapper, #sidebar-wrapper {
   padding-left: 250px;
-  transition: all .4s ease 0s;
   height: 100%;
 }
 
 #sidebar-wrapper {
-  padding-left: 250px;
-  transition: all .4s ease 0s;
   margin-left: -145px;
   left: -105px;
   width: 250px;
   position: fixed;
   height: 100%;
-  z-index: 999;
   background: #30426a;
 }
 
@@ -111,6 +107,7 @@
   line-height: 60px;
   background: #2d3e63;
 }
+
 .sidebar .sidebar-list {
   text-indent: 25px;
   font-size: 15px;

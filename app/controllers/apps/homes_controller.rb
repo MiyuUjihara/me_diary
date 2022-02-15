@@ -1,6 +1,6 @@
 class Apps::HomesController < Apps::ApplicationController
   def index
-    @column = Column.limit(20).order('created_at DESC')
+    @columns = Column.where(status: "active").limit(20).order('created_at DESC')
   end
 
   def show
@@ -8,7 +8,7 @@ class Apps::HomesController < Apps::ApplicationController
   end
 
   def category_search
-    @columns  = Column.where(category_id: params[:category_id]) rescue nil
+    @columns  = Column.where(category_id: params[:category_id], status: "active") rescue nil
     @category = Category.find(params[:category_id]) rescue nil
   end
 

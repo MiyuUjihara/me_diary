@@ -3,7 +3,7 @@
   <div class="content-inner category-posts">
     <div class="new-posts__container">
       <ul class="post-list post-list-portrate posts">
-        <% @column.each do |column| %>
+        <% @columns.each do |column| %>
           <div class="posts-wrapper">
             <li class="post">
               <%= link_to apps_path(column), class: "post__inner" do %>

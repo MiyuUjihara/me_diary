@@ -1,0 +1,56 @@
+.admin-column-table {
+  height: 100%;
+  position: absolute;
+  margin: 0 auto;
+  left: 250px;
+  background: #f8f8f8;
+}
+
+.column-table-inner {
+  margin: 0 auto;
+  height: 100%;
+  width: calc(100% - 250px);
+}
+
+.table-title {
+  margin-bottom: 35px;
+  text-align: left;
+}
+
+.table {
+  margin: 10px;
+  font-size: 12px;
+  width: 100%;
+}
+
+.table-column {
+  margin-bottom: 8px;
+  height: 10px;
+}
+
+.val {
+  padding: 0.5rem 1.5rem;
+  background-color: var(--bs-table-bg);
+  border-bottom-width: 1px;
+  box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+}
+
+
+.val2{
+  text-align: center;
+}
+
+thead {
+  border-style: solid;
+  border-width: 0;
+}
+
+tbody, td, tfoot, th, tr {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+}
+
+.table>:not(:last-child)>:last-child>* {
+  border-bottom-color: currentColor;
+}

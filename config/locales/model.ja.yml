@@ -1,0 +1,34 @@
+# モデルは全て activerecord 以下に記述する。
+# これにより、User.model_name.human / User.human_attribute_name({attr_name})で使用可能。
+
+ja:
+  activerecord:
+    models:
+      # view側： User.model_name.human => "ユーザ" / t("activerecord.models.user")と同じ
+      user: ユーザー 
+      todo: Todo
+      diary: 日記
+      column: コラム
+      category: カテゴリー
+      admin_user: 管理者
+    # model毎に定義したいattributesを記述
+    attributes:
+        user:
+          id: ID
+          name: 名前
+          email: メールアドレス
+          password_digest: パスワード
+        column:
+          title: タイトル
+          content: コンテント
+          image: 画像
+          category_id: カテゴリー
+          admin_user_id: 管理者
+          status: ステータス
+
+  enums:
+    column:
+      status:
+        active: a
+        inactive: ふが
+        draft: ぴよ

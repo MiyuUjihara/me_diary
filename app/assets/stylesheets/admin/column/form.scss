@@ -12,8 +12,13 @@ textarea {
 
 }
 
+
 .admin-column-container {
   margin-top: 20px;
+  left: 250px;
+  width: calc(100% - 250px);
+  position: absolute;
+  background: #f8f8f8;
 }
 
 .admin-column-content {
@@ -78,19 +83,20 @@ textarea {
   margin: 30px auto;
 }
 
-.btn {
+.admin-submit-btn {
   margin:0 auto;
   border: 0px solid;
   border-radius: 3px;
-  background: rgb(185, 111, 61);
+  background:  #30426a;
+  color: #fff;
   height: 40px;
   width: 20%;
 }
 
-.btn:active {
+.admin-submit-btn:active {
   color: #fff;
-  background-color: rgb(185, 111, 61);
-  border-color: rgb(185, 111, 61);
+  background: #30426a;
+  opacity: 0.8;
 }
 
 hr {

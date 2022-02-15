@@ -31,7 +31,7 @@
       color: rgb(226, 153, 17);
       text-align: center;
     }
-
+    
     .users-simple-content {
       margin: 20px;
 
@@ -70,6 +70,11 @@
           background-color: rgb(185, 111, 61);
           border-color: rgb(185, 111, 61);
         }
+      }
+
+      .admin-submit-btn {
+        background:  #30426a;
+        color: #fff;
       }
     }
 

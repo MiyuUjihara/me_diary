@@ -1,6 +1,6 @@
 <div class="users-container">
   <div class="users-content">
-  <h1 class="users-content-h1">管理者登録</h1>
+  <h1 class="admin-users-content-h1">管理者登録</h1>
     <div class="-users-content-inner">
       <div class="users-simple-content">
         <%= form_with model: @admin_user, url: admin_users_path, local: true do |f| %>
@@ -25,7 +25,7 @@
               <%= render "partial/erros", errors: @admin_user.errors.full_messages_for(:password_confirmation) %>
             </div>
             <div class="btn-group">
-              <%= f.submit "新規登録", class: "btn" %>
+              <%= f.submit "新規登録", class: "btn admin-submit-btn" %>
             </div>
         <% end %>
       </div>

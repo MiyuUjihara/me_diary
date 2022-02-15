@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    models:
+      column: ユーザ情報
+    attributes:
+      column:
+        status: 性別
+  enums:
+    column:
+      status:
+        active: a
+        inactive: ふが
+        draft: ぴよ

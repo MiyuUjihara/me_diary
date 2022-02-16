@@ -13,4 +13,8 @@ class Column < ApplicationRecord
   validates :content, presence: true
   validates :image,   presence: true
 
+  def edit_image_url
+    return self.id.blank? ? 'noimage.png' : self.image.url
+  end
+
 end

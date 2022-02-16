@@ -3,6 +3,8 @@ class Admin::UsersController < Admin::ApplicationController
   before_action :require_sign_in!, only: [:show]
 
   def home
+    @columns = Column.limit(20).order('created_at DESC')
+    @todos = Todo.all.order('created_at DESC')
   end
   
   def index

@@ -2,7 +2,6 @@ class Admin::ColumnsController < Admin::ApplicationController
   before_action :set_column, only: [:show, :edit, :update, :destroy]
 
   def index
-    @columns = Column.limit(20).order('created_at DESC')
   end
 
   def new
@@ -12,7 +11,7 @@ class Admin::ColumnsController < Admin::ApplicationController
   def create
     @column = Column.new(column_params)
     if @column.save
-      redirect_to admin_columns_path
+      redirect_to admin_root_path
       flash[:notice] = "コラムが作成されました"
     else
       flash[:alert] = "コラムの作成に失敗しました"
@@ -28,21 +27,21 @@ class Admin::ColumnsController < Admin::ApplicationController
 
   def update
     if @column.update(column_params)
-      redirect_to admin_columns_path
-      flash[:notice] = "投稿を編集しました"
+      redirect_to admin_root_path
+      flash[:notice] = "コラムを編集しました"
     else
-      flash[:alert] = "投稿にの編集に失敗しました"
+      flash[:alert] = "コラムの編集に失敗しました"
       render :edit
     end
   end
 
   def destroy
     if @column.admin_user_id == current_admin_user.id
-      flash[:notice] = "日記が削除されました" if @column.destroy
+      flash[:notice] = "コラムが削除されました" if @column.destroy
     else
-      flash[:alert] = "日記の削除に失敗しました"
+      flash[:alert] = "コラムの削除に失敗しました"
     end
-    redirect_to admin_columns_path
+    redirect_to admin_root_path
   end
 
   private

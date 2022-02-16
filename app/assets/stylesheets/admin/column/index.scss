@@ -1,15 +1,16 @@
 .admin-column-table {
-  height: 100%;
-  position: absolute;
-  margin: 0 auto;
+  position: sticky;
   left: 250px;
   background: #f8f8f8;
+  width: calc(100% - 250px);
 }
 
 .column-table-inner {
   margin: 0 auto;
   height: 100%;
-  width: calc(100% - 250px);
+  width: calc(100% - 300px);
+  margin-top: 60px;
+  padding: 20px;
 }
 
 .table-title {

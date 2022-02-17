@@ -61,6 +61,13 @@
             line-height: 48px;
           }
 
+
+          .writter-container {
+            display: flex;
+            align-items: center;
+            padding: 5px 5px 25px 0;
+          }
+
           .writter {
             color: rgb(158, 158, 158);
             width: 100%;
@@ -70,11 +77,12 @@
             font-size: 15px;
             line-height: 30px;
           }
+
           a {
             color: #895748;
             text-decoration: none;
             background-color: transparent;
-            padding: 20px;
+            padding: 3px;
             text-align: right;
           }
 
@@ -88,4 +96,8 @@
       padding: 28px;
     }
   }
+}
+
+.fas {
+  font-size: 15px;
 }

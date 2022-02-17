@@ -28,6 +28,11 @@ class Apps::UsersController < Apps::ApplicationController
     @diary = Diary.find_by(id: params[:id])
   end
 
+  def likes
+    likes = Like.where(user_id: current_user).pluck(:column_id)
+    @like_columns = Column.find(likes)
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)

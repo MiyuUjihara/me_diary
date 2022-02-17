@@ -1,0 +1,28 @@
+
+<article class="column-wrapper category-search-wrapper">
+  <h2 class="category-title">お気に入り</h2>
+  <div class="content-inner category-posts">
+    <div class="new-posts__container">
+      <ul class="post-list post-list-portrate posts">
+        <% @like_columns.each do |likecolumn| %>
+          <div class="posts-wrapper">
+            <li class="post">
+              <%= link_to apps_path(likecolumn), class: "post__inner" do %>
+                <div class="post__thumbnail lazyloaded"><%= image_tag likecolumn.image.url, class: "img" %></div>
+                <div class="post__body">
+                  <div class="post__title"><%= likecolumn.title %></div>
+                </div>
+                <li>
+                  <%= link_to class: "writter" do%>
+                    <i class="fas fa-pen-nib"></i>
+                    <%= likecolumn.admin_user.name %>
+                  <% end %>
+                </li>
+              <% end %>
+            </li>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</article>

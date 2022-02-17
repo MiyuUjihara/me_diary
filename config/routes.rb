@@ -9,8 +9,14 @@ Rails.application.routes.draw do
     get '/login', to: 'sessions#new'
     post '/login', to: 'sessions#create'
     delete '/logout', to: 'sessions#destroy'
+    post 'like/:id' => 'likes#create', as: 'create_like'
+    delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
     resources :users, only: [:new, :create, :index,]
-    resources :users, only: [:show, :edit, :update, :destroy], param: :name
+    resources :users, only: [:show, :edit, :update, :destroy], param: :name do
+      member do
+        get :likes
+      end
+    end
     resources :diaries
   end
 

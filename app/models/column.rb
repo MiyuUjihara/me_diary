@@ -7,6 +7,7 @@ class Column < ApplicationRecord
   has_rich_text :content
   belongs_to :admin_user
   mount_uploader :image, ImageUploader
+  has_many :likes, dependent: :destroy
 
 
   validates :title,   presence: true, uniqueness: true

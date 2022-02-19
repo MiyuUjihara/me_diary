@@ -1,0 +1,36 @@
+<div class="diaries-new-wrapper">
+  <div class="diaries-sidebar">
+    <%= render "partial/apps_sidemenubar"%>
+  </div>
+    <div class="users">
+      <div class="users-container">
+        <div class="users-container-link">
+          <h1 class="user-name">@<%= @user.name %></h1>
+          <br>
+        </div>
+        <div class="users-container-content">
+          <% @diaries.each do |diary| %>
+
+            <div class="contents">
+              <%= link_to apps_diary_path(diary), class:"link", remote: true do %>
+                <%= image_tag diary.get_image_url, class: "contents-image"%>
+              <% end %>
+            </div>
+
+            <%# 詳細モーダル %>
+            <div id="mask" class="hidden"></div>
+            <div id="close-btn" class="hidden">×閉じる</div>
+            <div id="modal" class="hidden"></div>
+
+            <%# 編集&削除モーダル %>
+            <div id="on_modal" class="hidden om1">
+            </div>
+
+          <% end %>
+        </div>
+        <div class="users-container-next">
+          <%= paginate @diaries %>
+        </div>
+      </div>  
+  </div>
+</div>

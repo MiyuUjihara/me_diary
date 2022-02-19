@@ -1,5 +1,5 @@
 
-<article class="column-wrapper category-search-wrapper">
+<article class="category-search-wrapper">
   <h2 class="category-title">お気に入り</h2>
   <div class="content-inner category-posts">
     <div class="new-posts__container">
@@ -13,10 +13,10 @@
                   <div class="post__title"><%= likecolumn.title %></div>
                 </div>
                 <li>
-                  <%= link_to class: "writter" do%>
+                  <div class="writter">
                     <i class="fas fa-pen-nib"></i>
                     <%= likecolumn.admin_user.name %>
-                  <% end %>
+                  </div>
                 </li>
               <% end %>
             </li>

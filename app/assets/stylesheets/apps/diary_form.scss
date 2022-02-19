@@ -1,3 +1,12 @@
+.diaries-new-wrapper {
+display: flex;
+
+  .diaries-sidebar {
+    margin: 30px;
+    height: 100%;
+  }
+}
+
 // フォーム関係
 
 textarea {
@@ -15,7 +24,7 @@ textarea {
 .content {
   background: white;
   padding: 20px;
-  width : 70%;
+  width : 90%;
   min-height: 450px;
   margin: 30px auto;
   border-radius: 3px;
@@ -88,12 +97,12 @@ textarea {
 .btn-area {
   width: 100%;
   text-align: right;
-  width: 70%;
+  width: 90%;
   margin: 30px auto;
 }
 
 .users_btn {
-  margin:0 auto;
+  margin: 20px auto;
   border: 0px solid;
   border-radius: 3px;
   background: rgb(185, 111, 61);

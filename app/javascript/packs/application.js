@@ -10,6 +10,7 @@ require("channels")
 require('jquery')
 require("packs/form")
 require("packs/admin_navbar")
+require("packs/apps_navbar")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

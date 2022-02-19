@@ -1,9 +1,16 @@
 class Apps::DiariesController < Apps::ApplicationController
-  before_action :set_diary, only: [:show, :edit, :update, :destroy]
+  before_action :set_diary, only: [:index, :show, :edit, :update, :destroy]
   before_action :signed_in?
   before_action :require_sign_in!, only: [:new, :create, :edit, :upudate, :destroy]
 
   
+  def index
+    @user = current_user
+
+    @diaries = @user.diaries.order('date DESC').page(params[:page]).per(9)
+    @diary = Diary.find_by(id: params[:id])
+  end
+
   def new
     @diary = Diary.new
   end

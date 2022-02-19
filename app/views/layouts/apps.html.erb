@@ -14,7 +14,7 @@
 
   <body>
     <%= render "partial/apps_navbar" %>
-    
+
     <div class="alert-container">
       <% if flash[:notice] %>
         <div class="alert alert-info">
@@ -29,6 +29,7 @@
 
     </div>
     <%= yield %>
+    <%= render 'partial/apps_footer'%>
   </body>
-
+  
 </html>

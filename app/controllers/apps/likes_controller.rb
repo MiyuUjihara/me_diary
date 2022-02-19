@@ -3,12 +3,12 @@ class Apps::LikesController < Apps::ApplicationController
 
   def create
     Like.create(user_id: current_user.id, column_id: params[:id])
-    redirect_to  apps_path()
+    redirect_to  apps_path(params[:id])
   end
 
   def destroy
     Like.find_by(user_id: current_user.id, column_id: params[:id]).destroy
-    redirect_to apps_path()
+    redirect_to apps_path(params[:id])
   end
   
 private

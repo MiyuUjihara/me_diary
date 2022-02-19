@@ -1,6 +1,7 @@
 class Apps::HomesController < Apps::ApplicationController
   def index
     @columns = Column.where(status: "active").limit(20).order('created_at DESC')
+    @todo = Todo.order("RANDOM()").limit(1)
   end
 
   def show

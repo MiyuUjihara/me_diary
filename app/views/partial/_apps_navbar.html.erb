@@ -7,10 +7,8 @@
     <nav class="header-right-outer">
       <ul class="list-unstyled header-nav-text-list">
         <% if current_user %> 
-          <li class="button-container"><%= link_to "日記", new_apps_diary_path, class: "button"%></li>
-          <li class="button-container"><%= link_to "ログアウト", apps_logout_path, method: :delete, class: "button"%></li>
-          <li class="button-container2"><%= link_to apps_user_path(current_user.name), class: "button2" do %><i class="far fa-user-circle"></i><% end %></li>
-          <li class="button-container2"><%= link_to likes_apps_user_path(current_user.name), class: "button2" do %><i class="fa fa-heart"></i><% end %></li>
+          <li class="button-container"><%= link_to  apps_root_path, class: "button2 apps_choice2" do %><i class="fas fa-book-open"></i><p class="button-print">コラム一覧</p><% end %></li>
+          <li class="button-container"><%= link_to apps_user_path(current_user.name), class: "button2 apps_choice" do %><i class="far fa-user-circle"></i><p class="button-print">マイページ</p><% end %></li>
         <% else %>
           <li class="button-container"><%= link_to "ログイン", apps_login_path, class: "button"%></li>
           <li class="button-container"><%= link_to "無料会員登録", new_apps_user_path, class: "button"%></li>

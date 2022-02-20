@@ -1,5 +1,23 @@
+<div class="column_swiper">
+  <div class="topic__image">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <% @pickups.each do |pickup| %>
+          <div class="swiper-slide">
+            
+            <%= image_tag pickup.image_url, class: "swiper-image"%>
+          </div>
+        <% end %>
+      </div>
+      <div class="swiper-pagination swiper-pagination-white"></div>
+      <div class="swiper-button-prev swiper-button-white"></div>
+      <div class="swiper-button-next swiper-button-white"></div>
+    </div>
+  </div>
+</div>
+
 <article class="column-wrapper category-search-wrapper">
-  <h2 class="heading__new-posts">新着記事</h2>
+  <h2 class="heading__new-posts"><%= image_tag "new_column", class: "column_title_image" %></h2>
   <div class="content-inner category-posts">
     <div class="new-posts__container">
       <ul class="post-list post-list-portrate posts">
@@ -27,23 +45,30 @@
 </article>
 
 
-<div class="apps-column-wrapper">
-  <div class="apps-column-inner">
-    <div class="heading__categories">
-      <h2>カテゴリ一覧</h2>
+<article class="column-ranking-wrapper category-search-wrapper">
+  <h2 class="heading__new-posts"><%= image_tag "ranking", class: "column_title_image" %></h2>
+  <div class="content-inner category-posts">
+    <div class="new-posts__container">
+      <ul class="post-list post-list-portrate posts">
+        <% @all_ranks.each do |all_rank| %>
+          <div class="posts-wrapper">
+            <li class="post">
+              <%= link_to apps_path(all_rank), class: "post__inner" do %>
+                <div class="post__thumbnail lazyloaded"><%= image_tag all_rank.image.url, class: "img" %></div>
+                <div class="post__body">
+                  <div class="post__title"><%= all_rank.title %></div>
+                </div>
+                <li>
+                  <%= link_to class: "writter" do%>
+                    <i class="fas fa-pen-nib"></i>
+                    <%= all_rank.admin_user.name %>
+                  <% end %>
+                </li>
+              <% end %>
+            </li>
+          </div>
+        <% end %>
+      </ul>
     </div>
-    <ul class= "column-categories">
-      <% Category.all.each_with_index do |category, i| %>
-        <% next if i.zero? %>
-        <li class="column-category-parts">
-          <%= link_to apps_category_search_path(category_id: category.id) do%>
-            <div class="category-link-parts">
-              <%= image_tag category.url, class: "category-image" %>
-              <p class="category-name"><%= category.name %></p>
-            </div>
-          <% end %>
-        </li>
-      <% end %>
-    </ul>
   </div>
-</div>
+</article>

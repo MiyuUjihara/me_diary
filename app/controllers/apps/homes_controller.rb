@@ -1,6 +1,8 @@
 class Apps::HomesController < Apps::ApplicationController
   def index
     @columns = Column.where(status: "active").limit(20).order('created_at DESC')
+    @pickups = Column.where(status: "active", category_id: "1").limit(9).order('created_at DESC')
+    @all_ranks = Column.find(Like.group(:column_id).order('count(column_id) desc').limit(6).pluck(:column_id))
     @todo = Todo.order("RANDOM()").limit(1)
   end
 

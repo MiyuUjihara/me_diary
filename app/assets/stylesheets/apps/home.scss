@@ -4,6 +4,13 @@
   margin-top: 30px;
 }
 
+.column-ranking-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 30px;
+  background: #ffff;
+}
+
 .category-title {
   width: 100%;
   margin: 0 auto;
@@ -16,9 +23,14 @@
 }
 
 .heading__new-posts {
-  margin: 0 auto;
-  margin-bottom: 35px;
+  margin: 50px auto;
   text-align: center;
+}
+
+.column_title_image {
+  width: 300px;
+  height: 25px;
+  margin-top: 40px;
 }
 
 .category-posts {
@@ -27,6 +39,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  margin: 0 auto;
 }
 
 .post-list {
@@ -71,17 +84,15 @@
 }
 
 .search-post__thumbnail {
+  width: 300px;
   height: 180px;
 }
 
-.search-img {
-  width: 260px;
-  height: 180px;
-}
 
 .img {
-  width: 100%;
+  width: 300px;
   height: 180px;
+  object-fit: cover;
 }
 
 .post__body {

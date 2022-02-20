@@ -3,7 +3,7 @@ $(document).on('turbolinks:load', ()=> {
     var html =
       `
       <div class="target">
-        <img src="${fileUrl}" width="100%" height="100%" alt="イラスト1">
+        <img src="${fileUrl}" width="100%" height="100%" alt="イラスト1" class="defalt_image">
       </div>
       `
     return html;

@@ -6,6 +6,8 @@ class Todo < ApplicationRecord
 
   has_rich_text :content
   belongs_to :admin_user
+  has_many :user_todos, dependent: :destroy
+  has_many :users, through: :user_todos
   mount_uploader :image, ImageUploader
 
   validates :title,   presence: true, uniqueness: true

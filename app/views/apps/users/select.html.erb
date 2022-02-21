@@ -1,0 +1,11 @@
+<article class="todo-wrapper wrapper-style">
+    <% @todo.each do |todo| %>
+      <div class="todo-innner">
+        <%= image_tag todo.image.url, class: "todos-thumbnail" %>
+        <div class="todo-conteiner">
+          <h2 class="todos_title"><%= todo.title %></h2>
+          <div class="todos_content"><%= todo.content %></div>
+        </div>
+      </div>
+    <% end %>
+  </article>

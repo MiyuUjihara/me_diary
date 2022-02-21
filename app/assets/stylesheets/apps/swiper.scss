@@ -22,6 +22,7 @@ swiper-container {
   height: 350px; 
   background-color: rgba(0,0,0,0.8);
 }
+
 .swiper-wrapper {
   position: relative;
   width: 100%;
@@ -56,10 +57,17 @@ swiper-container {
 }
 
 .swiper-button-white:after{
-
   color: rgb(175, 174, 174);
 }
 
 .swiper-pagination {
   --swiper-theme-color: #f5a53a;
+  --swiper-navigation-size: 30px;
+  position: inherit;
+}
+
+.swiper-dummy {
+  width: 100%;
+  height: 30px;
+  position: relative;
 }

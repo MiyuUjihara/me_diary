@@ -19,13 +19,15 @@ class Apps::UsersController < Apps::ApplicationController
   end
 
   def show
+
     if params[:name] != current_user.name
       return redirect_to apps_404_path 
     end
     @user = User.find_by(name: params[:name])
     @diaries = @user.diaries.order('date DESC').limit(7)
     @diary = Diary.find_by(id: params[:id])
-    @todo = Todo.order("RANDOM()").limit(1)
+    
+    @selected_todo = current_user.todos.find_by(id: current_user.user_todos.last.todo_id) rescue nil
   end
 
   def likes

@@ -1,16 +1,15 @@
 
 <footer>
-  <div class="container">
-    <div class="apps-column-wrapper">
-        <div class="apps-column-inner">
-          <ul class= "column-categories">
+  <div class="footer-container">
+    <div class="footer-column-wrapper">
+        <div class="footer-column-inner">
+          <ul class= "footer-column-categories">
             <% Category.all.each_with_index do |category, i| %>
               <% next if i.zero? %>
-                <li class="column-category-parts">
+                <li class="footer-column-category-parts">
                 <%= link_to apps_category_search_path(category_id: category.id) do%>
-                  <div class="category-link-parts">
-                    <%= image_tag category.url, class: "category-image" %>
-                    <p class="category-name"><%= category.name %></p>
+                  <div class="footer-category-link-parts">
+                    <p class="footer-category-name"><%= category.name %></p>
                   </div>
                 <% end %>
               </li>

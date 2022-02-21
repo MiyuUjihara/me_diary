@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_secure_password
   has_many :diaries, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :user_todos, dependent: :destroy
+  has_many :todos, through: :user_todos
 
   validates :name,  presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }

@@ -11,13 +11,23 @@ Rails.application.routes.draw do
     delete '/logout', to: 'sessions#destroy'
     post 'like/:id' => 'likes#create', as: 'create_like'
     delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
-    resources :users, only: [:new, :create, :index,]
+
+    # ユーザー作成時のパス
+    resources :users, only: [:new, :create]
+
+    # ユーザー作成時以外のパスを「user.name」にしたいため
     resources :users, only: [:show, :edit, :update, :destroy], param: :name do
       member do
         get :likes
       end
     end
+
     resources :diaries
+
+
+    get 'user_todos'  => 'user_todos#index'
+    get 'user_selected_todos'  => 'user_todos#selected'
+    post 'user_todos' => 'user_todos#create'
   end
 
   namespace :admin do

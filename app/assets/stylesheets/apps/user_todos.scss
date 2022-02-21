@@ -1,0 +1,49 @@
+.todos_swiper {
+  height: 500px;
+}
+
+.todos_topic-image {
+  width: 900px;
+  padding-top: 50px;
+}
+
+.todos_swiper_slide {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.todos-swiper-slide_dummy {
+  margin: 0 auto;
+  width: 600px;
+}
+
+.todos-swiper-slide_inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 600px;
+}
+
+
+.todos_swiper-container {
+  width: 100%;
+  height: 350px; 
+}
+.swiper_todos_content {
+  width: 350px;
+  padding: 10px;
+}
+
+.swiper-title {
+  margin-top: 20px;
+}
+
+.swiper-content {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.swiper-button-white:after {
+  color: #f5a53a;
+}

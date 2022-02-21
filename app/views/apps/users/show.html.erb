@@ -2,15 +2,21 @@
   <%= render "partial/apps_sidemenubar"%>
 
   <article class="todo-wrapper wrapper-style">
-    <% @todo.each do |todo| %>
+      <% if @selected_todo %>
       <div class="todo-innner">
-        <%= image_tag todo.image.url, class: "todos-thumbnail" %>
+        <%= image_tag @selected_todo.image.url, class: "todos-thumbnail" %>
         <div class="todo-conteiner">
-          <h2 class="todos_title"><%= todo.title %></h2>
-          <div class="todos_content"><%= todo.content %></div>
+        <h2 class="todos_title"><%= @selected_todo.id %></h2>
+          <h2 class="todos_title"><%= @selected_todo.title %></h2>
+          <div class="todos_content"><%= @selected_todo.content %></div>
         </div>
       </div>
-    <% end %>
+      <% else %>
+      <div>
+        <%= link_to "Todoを選ぶ", apps_user_todos_path,  class: "list-part" %>
+      </div>
+      <% end %>
+
   </article>
 
   <article class="connection-column-wrapper wrapper-style">

@@ -1,16 +1,24 @@
 <div class="users-mypage">
+  <%# サイドメニューバーを表示 %>
   <%= render "partial/apps_sidemenubar"%>
 
+  <%# 選んだ最新todoを表示 %>
   <article class="todo-wrapper wrapper-style">
       <% if @selected_todo %>
       <div class="todo-innner">
         <%= image_tag @selected_todo.image.url, class: "todos-thumbnail" %>
         <div class="todo-conteiner">
-        <h2 class="todos_title"><%= @selected_todo.id %></h2>
           <h2 class="todos_title"><%= @selected_todo.title %></h2>
           <div class="todos_content"><%= @selected_todo.content %></div>
         </div>
+        <%= form_with url: "/apps/user_todos/#{@selected_todo.id}", method: :patch, local: true do |f| %>
+          <%= f.select :status, UserTodo.statuses.keys %>
+          <%= f.submit "変更" %>
+        <% end %>
       </div>
+    
+
+
       <% else %>
       <div>
         <%= link_to "Todoを選ぶ", apps_user_todos_path,  class: "list-part" %>
@@ -19,6 +27,7 @@
 
   </article>
 
+  <%# 直近１週間のdiaryを表示 %>
   <article class="connection-column-wrapper wrapper-style">
     <h2 class="heading__connection-column">最近の日記</h2>
     <div class="column__inner">

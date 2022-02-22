@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
 
     get 'user_todos'  => 'user_todos#index'
+    patch 'user_todos/:id' => 'user_todos#update'
     get 'user_selected_todos'  => 'user_todos#selected'
     post 'user_todos' => 'user_todos#create'
   end

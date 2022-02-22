@@ -1,3 +1,6 @@
-<%  @selected_todos.each do |selected_todo| %>
-  <%= selected_todo.title %>
-<% end %>
+<div style="display: flex;">
+  <%= render "apps/users/apps_sidemenubar"%>
+  <%  @selected_todos.each do |selected_todo| %>
+    <%= selected_todo.title %>
+  <% end %>
+</div>

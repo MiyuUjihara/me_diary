@@ -1,0 +1,31 @@
+<article class="menu-wrapper wrapper-style">
+  <ul class="users-menu-list">
+    <%= link_to apps_user_path(current_user.name) do %>
+      <li class="sidemenu-list"><i class="fas fa-home sidemenu-icon"></i>ホーム</li>
+    <% end %>
+
+    <%= link_to new_apps_diary_path do %>
+      <li class="sidemenu-list"><i class="fas fa-book-open sidemenu-icon"></i>日記を書く</li>
+    <% end %>
+
+    <%= link_to apps_diaries_path do %>
+      <li class="sidemenu-list"><i class="fas fa-book-reader sidemenu-icon"></i>日記一覧</li>
+    <% end %>
+
+    <%= link_to apps_user_todos_path do %>
+      <li class="sidemenu-list"><i class="far fa-calendar-check sidemenu-icon"></i>Todoを選ぶ</li>
+    <% end %>
+
+    <%= link_to apps_user_selected_todos_path do %>
+      <li class="sidemenu-list"><i class="far fa-calendar-check sidemenu-icon"></i>過去のTodo一覧</li>
+    <% end %>
+
+    <%= link_to likes_apps_user_path(current_user.name) do %>
+      <li class="sidemenu-list"><i class="far fa-star sidemenu-icon"></i>お気に入り記事</li>
+    <% end %>
+
+    <%= link_to apps_logout_path, method: :delete do %>
+      <li class="sidemenu-list"><i class="fas fa-sign-out-alt sidemenu-icon"></i>ログアウト</li>
+    <% end %>
+  </ul>
+</article>

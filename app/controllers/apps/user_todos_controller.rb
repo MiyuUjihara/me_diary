@@ -22,13 +22,21 @@ class Apps::UserTodosController < Apps::ApplicationController
   end
 
   def update
-    @user_todo = UserTodo.find_by(user_id: current_user.id, todo_id: params[:id].to_i)
-    
-    if @user_todo.update!(status: params[:status])
-      flash[:notice] = params[:status] == "incomplete" ? "未完了やで！" : "完了やで！"  
+
+    @user_todo = UserTodo.find(params[:id])
+
+    data = case params[:status]
+            when "completed"
+              {status: "completed", message: "本日のTodoを完了しました"} 
+            when "incomplete"
+              {status: "incomplete", message: "本日のTodoを未完了にしました"}
+            end
+
+    if @user_todo.update!(status: data[:status])
+      flash[:notice] = data[:message]
       redirect_to apps_user_path(current_user.name)
     else
-      flash[:notice] = "完了できまへんでした！！"
+      flash[:notice] = "Todoのステータスを変更出来ませんでした"
       render :show
     end
 

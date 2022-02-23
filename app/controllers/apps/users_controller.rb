@@ -19,15 +19,11 @@ class Apps::UsersController < Apps::ApplicationController
   end
 
   def show
-
-    if params[:name] != current_user.name
-      return redirect_to apps_404_path 
-    end
-    @user = User.find_by(name: params[:name])
-    @diaries = @user.diaries.order('date DESC').limit(7)
-    @diary = Diary.find_by(id: params[:id])
-    
-    @selected_todo = current_user.todos.find_by(id: current_user.user_todos.last.todo_id) rescue nil
+    user_mismatch(params[:name])
+    @diaries        = current_user.diaries.order('date DESC').limit(7)
+    today_user_todo = current_user.user_todos.where(created_at: Time.zone.today.beginning_of_day..Time.zone.today.end_of_day).last
+    @selected_todo  = current_user.todos.find_by(id: today_user_todo.todo_id) rescue nil
+    @user_todo      = @selected_todo.user_todos.last rescue nil
   end
 
   def likes
@@ -39,4 +35,9 @@ class Apps::UsersController < Apps::ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
+
+  def user_mismatch(user_name)
+    return redirect_to apps_404_path unless user_name == current_user.name
+  end
+
 end

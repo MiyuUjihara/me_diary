@@ -1,10 +1,10 @@
 .users {
-  width: 100%;
+  width: 1000px;
 }
 .users-container {
   margin-left: 30px;
   padding: 40px 0 50px;
-  width: 75%;
+  width: 100%;
 }
 .users-container-link {
   height: 80px;
@@ -207,18 +207,17 @@
 
 .users-mypage {
   display: flex;
-  margin: 10px;
 }
 
 .wrapper-style {
-  margin: 30px;
+  margin: 30px 20px 30px 0;
   height: 100%;
 }
 
 
 
 .todo-wrapper {
-  background: #ffff;
+  background: white;
   width: 550px;
   height: 500px;
 
@@ -257,12 +256,18 @@
       font-size: 14px;
     }
   }
+
+  .todo-select-btn {
+    width: 200px;
+    height: 40px;
+    background-color: red;
+  }
 }
 
 
 
 .connection-column-wrapper {
-
+  background-color: white;
   width: 400px;
   height: 500px;
 }

@@ -12,10 +12,6 @@
       <li class="sidemenu-list"><i class="fas fa-book-reader sidemenu-icon"></i>日記一覧</li>
     <% end %>
 
-    <%= link_to apps_user_todos_path do %>
-      <li class="sidemenu-list"><i class="far fa-calendar-check sidemenu-icon"></i>Todoを選ぶ</li>
-    <% end %>
-
     <%= link_to apps_user_selected_todos_path do %>
       <li class="sidemenu-list"><i class="far fa-calendar-check sidemenu-icon"></i>過去のTodo一覧</li>
     <% end %>
@@ -24,7 +20,7 @@
       <li class="sidemenu-list"><i class="far fa-star sidemenu-icon"></i>お気に入り記事</li>
     <% end %>
 
-    <%= link_to apps_logout_path, method: :delete do %>
+    <%= link_to apps_logout_path, method: :delete, data: { confirm: "【確認】ログアウトしてもよろしいですか？" } do %>
       <li class="sidemenu-list"><i class="fas fa-sign-out-alt sidemenu-icon"></i>ログアウト</li>
     <% end %>
   </ul>

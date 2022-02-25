@@ -1,5 +1,4 @@
 class Apps::UserTodosController < Apps::ApplicationController
-  # before_action :set_user_todo, only: [:update]
 
   def index
     last_todo_day = current_user.user_todos.last.created_at.strftime("%Y年%m月%d日") rescue nil
@@ -44,7 +43,7 @@ class Apps::UserTodosController < Apps::ApplicationController
 
 
   def selected
-    @selected_todos = current_user.todos
+    @current_user_todos = UserTodo.where(user_id: current_user.id)
   end
 
 end

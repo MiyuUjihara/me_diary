@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
     get '/404', to: 'homes#error'
     get '/column/:id', to: "homes#show"
+    get '/searched_column/:keyword', to: 'homes#searched_column', as: 'searched_column'
     get '/login', to: 'sessions#new'
     post '/login', to: 'sessions#create'
     delete '/logout', to: 'sessions#destroy'
@@ -29,6 +30,12 @@ Rails.application.routes.draw do
     patch 'user_todos/:id/:status' => 'user_todos#update'
     get 'user_selected_todos'  => 'user_todos#selected'
     post 'user_todos' => 'user_todos#create'
+
+    
+    namespace :search do
+      get 'column_search' => 'columns#search'
+    end
+
   end
 
   namespace :admin do

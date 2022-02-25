@@ -1,6 +1,7 @@
 <div style="display: contents;">
   <%# 選んだ最新todoを表示 %>
   <article class="todo-wrapper wrapper-style">
+    <h2 class="heading__connection-column">本日のTodo</h2>
     <% if @selected_todo %>
       <div class="todo-innner">
         <%= image_tag @selected_todo.image.url, class: "todos-thumbnail" %>
@@ -8,10 +9,10 @@
           <h2 class="todos_title"><%= @selected_todo.title %></h2>
           <div class="todos_content"><%= @selected_todo.content %></div>
         </div>
-
-        <%= link_to "未完了に変更する", "/apps/user_todos/#{@user_todo.id}/incomplete", class: "like-link", method: :patch if @user_todo.status_completed? %>
-        <%= link_to "完了に変更する", "/apps/user_todos/#{@user_todo.id}/completed", class: "like-link", method: :patch if @user_todo.status_incomplete? %>
-        
+        <div class="complete_button_container">
+          <%= link_to "未完了に変更する", "/apps/user_todos/#{@user_todo.id}/incomplete", class: "complete-link", method: :patch if @user_todo.status_completed? %>
+          <%= link_to "完了に変更する", "/apps/user_todos/#{@user_todo.id}/completed", class: "complete-link", method: :patch if @user_todo.status_incomplete? %>
+        </div>
       </div>
 
     <% else %>

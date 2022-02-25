@@ -6,11 +6,11 @@
         <div class="search-posts-wrapper">
           <li class="search-post">
             <%= link_to apps_path(column), class: "search-post__inner" do %>
-              <div class="search-hoge">
+              <div class="search-inner">
                 <div class="search-post__thumbnail lazyloaded"><%= image_tag column.image.url, class: "search-img" %></div>
                 <div class="search-post__body">
-                  <div class="post__content title-part"><h3><%= "title: #{column.title}" %></h3></div>
-                  <div class="post__content content-part"><%= "content: #{strip_tags(column.content.to_s).truncate(20)}" %></div>
+                  <div class="post__content title-part"><h3><%= column.title %></h3></div>
+                  <div class="post__content content-part"><%= strip_tags(column.content.to_s).truncate(120) %></div>
                   <div class="post__content writter-part"><i class="fas fa-pen-nib"></i><%= column.admin_user.name %></div>
                 </div>
               </div>

@@ -6,7 +6,7 @@ $(document).on('turbolinks:load', ()=> {
     apps_root: "/apps",
     apps_mypage: "/apps/users",
     diary: "/apps/diaries",
-    todo: "/apps/todo",
+    todo: "/apps/todo"
   }
 
   if (URL.includes(TargetUrl.apps_mypage)) {
@@ -17,5 +17,5 @@ $(document).on('turbolinks:load', ()=> {
     $('.apps_choice').addClass("apps-select")
   } else if (URL.includes(TargetUrl.apps_root)) {
     $('.apps_choice2').addClass("apps-select")
-  } 
+  }
 });

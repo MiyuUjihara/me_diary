@@ -7,7 +7,7 @@
     <%= link_to edit_apps_diary_path(@diary), class: "link"  do %>
       <div class="btn_1">編集</div>
     <% end %>
-    <%= link_to apps_diary_path(@diary), method: :delete, class: "link" do %>
+    <%= link_to apps_diary_path(@diary), method: :delete, data: { confirm: "【確認】日記を削除してもよろしいですか？" }, class: "link" do %>
       <div class="btn_1 d_btn">削除</div>
     <% end %>
   </div>

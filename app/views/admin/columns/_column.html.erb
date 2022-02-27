@@ -8,7 +8,7 @@
           <div class="posts-wrapper">
             <li class="post">
               <%= link_to apps_path(likecolumn), class: "post__inner" do %>
-                <div class="post__thumbnail lazyloaded"><%= image_tag likecolumn.image.url, class: "img" %></div>
+                <div class="like_post__thumbnail lazyloaded"><%= image_tag likecolumn.image.url, class: "like_img" %></div>
                 <div class="post__body">
                   <div class="post__title"><%= likecolumn.title %></div>
                 </div>

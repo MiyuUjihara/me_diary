@@ -1,4 +1,5 @@
 class Admin::SessionsController < Admin::ApplicationController
+  skip_before_action :require_sign_in!, only: [:new, :create]
   before_action :exist_sign_in!, only: [:new, :create]
   
   def new

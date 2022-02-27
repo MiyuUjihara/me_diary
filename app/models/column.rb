@@ -18,4 +18,10 @@ class Column < ApplicationRecord
     return self.id.blank? ? 'noimage.png' : self.image.url
   end
 
+  class << self
+    def search(keyword)
+      where(["title like? OR content like?", "%#{keyword}%", "%#{keyword}%"])
+    end
+  end
+
 end

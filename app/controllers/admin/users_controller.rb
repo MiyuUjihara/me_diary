@@ -1,6 +1,6 @@
 class Admin::UsersController < Admin::ApplicationController
+  skip_before_action :require_sign_in!, only: [:new, :create]
   before_action :exist_sign_in!, only: [:new, :create]
-  before_action :require_sign_in!, only: [:show]
 
   def home
     @columns = Column.limit(20).order('created_at DESC')

@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    models:
+      todo: ユーザ情報
+    attributes:
+      todo:
+        status: ステータス
+        title: タイトル
+        content: コンテント
+        image: サムネイル画像
+        category: カテゴリ
+  enums:
+    todo:
+      status:
+        active: a
+        inactive: ふが
+        draft: ぴよ

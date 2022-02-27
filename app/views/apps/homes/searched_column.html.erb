@@ -1,0 +1,11 @@
+<% if @columns_search.present? %>
+  <div class="post-list">
+    <% @columns_search .each do | column_search | %>
+      <%= image_tag column_search.image.url %>
+      <%= column_search.title %>
+    <% end %>
+  </div>
+
+  <% else %>
+    <div><%= "#{@keyword}のキーワードを含む記事はありませんでした" %></div>
+ <% end %>

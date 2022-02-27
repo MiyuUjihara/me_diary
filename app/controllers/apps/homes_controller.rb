@@ -15,4 +15,10 @@ class Apps::HomesController < Apps::ApplicationController
     @category = Category.find(params[:category_id]) rescue nil
   end
 
+  def searched_column
+    @keyword = params[:keyword]
+    @columns_search = Column.search(params[:keyword])
+
+  end
+
 end

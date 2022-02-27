@@ -26,7 +26,7 @@
                 <td class="val"><%= image_tag column.image.url, size: "90x60" %></td>
                 <td class="val">
                   <%= link_to "edit", edit_admin_column_path(column), class: "column-table-btn"%><br>
-                  <%= link_to "delete", admin_column_path(column), method: :delete, class: "column-table-btn"%></td>
+                  <%= link_to "delete", admin_column_path(column), method: :delete, data: { confirm: "【確認】コラムを削除してもよろしいですか？" }, class: "column-table-btn"%></td>
                 </td>
               </tr>
             <% end %>
@@ -61,7 +61,7 @@
                 <td class="val"><%= image_tag todo.image.url, size: "90x60" %></td>
                 <td class="val">
                   <%= link_to "edit", edit_admin_todo_path(todo), class: "column-table-btn"%><br>
-                  <%= link_to "delete", admin_todo_path(todo), method: :delete, class: "column-table-btn"%></td>
+                  <%= link_to "delete", admin_todo_path(todo), method: :delete,  data: { confirm: "【確認】ToDoToDoを削除してもよろしいですか？" }, class: "column-table-btn"%></td>
                 </td>
               </tr>
             <% end %>

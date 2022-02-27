@@ -46,7 +46,7 @@ $("#modal-btn").on('click', (e) => {
         <a href="/apps/diaries/${targetId}/edit" class="link">編集</a>
       </div>
       <div class="on-mordal-wrapper">
-        <a href="/apps/diaries/${targetId}" data-method="delete" class="link">削除</a>
+        <a href="/apps/diaries/${targetId}" data-method="delete" data-confirm="【確認】日記を削除してもよろしいですか？" class="link">削除</a>
       </div>
   `
   let content = `

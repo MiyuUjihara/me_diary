@@ -4,7 +4,7 @@ ja:
       column: ユーザ情報
     attributes:
       column:
-        status: 性別
+        status: ステータス
   enums:
     column:
       status:

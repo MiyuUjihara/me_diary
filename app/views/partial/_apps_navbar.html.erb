@@ -4,6 +4,17 @@
       <div class="header-logo"></div>
     <% end %>
 
+    <%# 検索フォーム %>
+    <div class="search-keyword-filed-container ">
+      <%= form_with url: apps_search_column_search_path, method: :get, local: true do |f| %>
+        <div class="search-keyword-filed-icon">
+          <i class="fas fa-search"></i>
+        </div>
+        <%= f.text_field :keyword, class: "search-keyword-field" %>  
+      <% end %>
+    </div>
+
+
     <nav class="header-right-outer">
       <ul class="list-unstyled header-nav-text-list">
         <% if current_user %> 

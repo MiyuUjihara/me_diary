@@ -1,6 +1,6 @@
 <div class="diaries-new-wrapper">
   <div class="diaries-sidebar">
-    <%= render "partial/apps_sidemenubar"%>
+    <%= render "apps/users/apps_sidemenubar"%>
   </div>
   <%= form_with model: @diary, url: apps_diaries_path, local: true do |f| %>
     <%= render "apps/diaries/form",  f: f %>

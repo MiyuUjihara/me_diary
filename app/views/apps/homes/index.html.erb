@@ -1,3 +1,16 @@
+<%
+=begin
+%>
+<div class="search-form">
+  <%= form_with url: apps_search_column_search_path, method: :get, local: true do |f| %>
+    <%= f.text_field :keyword %>
+    <%= f.submit "検索" %>
+  <% end %>
+</div>
+<%
+=end
+%>
+
 <div class="column_swiper">
   <div class="topic__image">
     <div class="swiper-container">
@@ -20,7 +33,7 @@
   </div>
 </div>
 
-<article class="column-wrapper category-search-wrapper">
+<article class="column-wrapper category-search-wrapper2">
   <h2 class="heading__new-posts"><%= image_tag "new_column", class: "column_title_image" %></h2>
   <div class="content-inner category-posts">
     <div class="new-posts__container">

@@ -1,3 +1,21 @@
-<%  @selected_todos.each do |selected_todo| %>
-  <%= selected_todo.title %>
-<% end %>
+<div style="display: flex;">
+  <div class="current_user_todos_sidebar">
+    <%= render "apps/users/apps_sidemenubar"%>
+    <div class="achievement_graph">
+      <%= pie_chart [["完了", @todos_status.count("completed")] , ["未完了", @todos_status.count("incomplete")]] %>
+    </div>
+  </div>
+  <div class="current_user_todos_wrapper">
+    <h2 class="current_user_todos_header">過去のToDo一覧</h2>
+    <ul class="current_user_todos">
+      <%  @current_user_todos.each do |current_user_todo| %>
+        <div class="current_user_todo_inner">
+          <li class="current_user_todo_img"><%= image_tag current_user_todo.todo.image.url, class: "current_user_todo_image" %></li>
+          <li class="current_user_todo_date"><%= current_user_todo.created_at.strftime('%Y/%m/%d') %></li>
+          <li class="current_user_todo_title"><%= current_user_todo.todo.title %></li>
+          <li class="current_user_todo_status"><%= current_user_todo.status %></li>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+</div>

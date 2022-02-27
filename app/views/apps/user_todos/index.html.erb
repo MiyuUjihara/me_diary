@@ -1,34 +1,37 @@
-<div class="column_swiper todos_swiper">
-  <div class="topic__image todos_topic-image">
-    <div class="todos_swiper-container">
-      <div class="swiper-wrapper">
-        <% @todos.each do |todo| %>
-            <div class="swiper-slide todos_swiper_slide">
-              <div class="todos-swiper-slide_dummy">
-                <%= link_to apps_user_todos_path(todo.id), method: :post do%>
-                  <div class="todos-swiper-slide_inner">
-                    <%= image_tag todo.image.url, class: "swiper-image" %>
-                    <div class="swiper_todos_content">
-                      <div class="swiper-title">
-                        <%= todo.title %>
-                      </div>
-                      <div class="swiper-content">
-                        <%= todo.content %>
+<div style="display: flex;">
+  <%= render "apps/users/apps_sidemenubar"%>
+  <div class="todos_swiper">
+    <div class="topic__image todos_topic-image">
+      <div class="todos_swiper-container">
+        <div class="swiper-wrapper">
+          <% @todos.each do |todo| %>
+              <div class="swiper-slide todos_swiper_slide">
+                <div class="todos-swiper-slide_dummy">
+                  
+                    <div class="todos-swiper-slide_inner">
+                      <%= image_tag todo.image.url, class: "swiper-image" %>
+                      <div class="swiper_todos_content">
+                        <div class="swiper-title">
+                          <%= todo.title %>
+                        </div>
+                        <div class="swiper-content">
+                          <%= todo.content %>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                <% end %>
+                  <%= link_to apps_user_todos_path(todo.id), method: :post do%><button class="todo_select_button">select</button><% end %>
+                </div>
               </div>
-            </div>
-        <% end %>
-      </div>
-        <div class="swiper-button_dummy">
-          <div class="swiper-button-prev swiper-button-white"></div>
-          <div class="swiper-button-next swiper-button-white"></div>
+          <% end %>
         </div>
-    </div>
-    <div class="swiper-dummy">
-      <div class="swiper-pagination todos_swiper-pagination-white"></div>
+          <div class="swiper-button_dummy">
+            <div class="swiper-button-prev swiper-button-white"></div>
+            <div class="swiper-button-next swiper-button-white"></div>
+          </div>
+      </div>
+      <div class="swiper-dummy">
+        <div class="swiper-pagination todos_swiper-pagination-white"></div>
+      </div>
     </div>
   </div>
 </div>

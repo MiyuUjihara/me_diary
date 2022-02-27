@@ -1,0 +1,45 @@
+<div style="display: contents;">
+  <%# 選んだ最新todoを表示 %>
+  <article class="todo-wrapper wrapper-style">
+    <h2 class="heading__connection-column">本日のTodo</h2>
+    <% if @selected_todo %>
+      <div class="todo-innner">
+        <%= image_tag @selected_todo.image.url, class: "todos-thumbnail" %>
+        <div class="todo-conteiner">
+          <h2 class="todos_title"><%= @selected_todo.title %></h2>
+          <div class="todos_content"><%= @selected_todo.content %></div>
+        </div>
+        <div class="complete_button_container">
+          <%= link_to "未完了に変更する", "/apps/user_todos/#{@user_todo.id}/incomplete", class: "complete-link", method: :patch if @user_todo.status_completed? %>
+          <%= link_to "完了に変更する", "/apps/user_todos/#{@user_todo.id}/completed", class: "complete-link", method: :patch if @user_todo.status_incomplete? %>
+        </div>
+      </div>
+
+    <% else %>
+      <%= render "select_todo_swipper" %>
+    <% end %>
+  </article>
+
+  <%# 直近１週間のdiaryを表示 %>
+  <article class="connection-column-wrapper wrapper-style">
+    <h2 class="heading__connection-column">最近の日記</h2>
+    <div class="column__inner">
+      <div class="connection-columns__container">
+        <ul class="connection-column-list">
+          <% @diaries.each do |diary| %>
+            <div class="column-wrapper">
+              <li class="column-list">
+                <%= link_to apps_diary_path(diary), class: "column__link" do %>
+                  <div class="column__thumbnail"><%= image_tag diary.image.url, class: "column__thumbnail-image" %></div>
+                  <div class="column__body">
+                    <div class="column__title"><%= diary.title %></div>
+                  </div>
+                <% end %>
+              </li>
+            </div>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </article>
+</div>

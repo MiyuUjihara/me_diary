@@ -2,7 +2,7 @@ class Admin::TodosController <  Admin::ApplicationController
   before_action :set_todo, only: [:show, :edit, :update, :destroy]
 
   def index
-    @todos = Todo.all.order('created_at DESC')
+    @todos = Todo.all.order('created_at DESC').page(params[:page]).per(5)
   end
 
   def new

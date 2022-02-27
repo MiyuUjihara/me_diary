@@ -12,7 +12,9 @@ require("packs/form")
 require("packs/admin_navbar")
 require("packs/apps_navbar")
 require("packs/apps_swiper")
-
+//= require Chart.bundle
+//= require chartkick
+import "chartkick/chart.js"
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.

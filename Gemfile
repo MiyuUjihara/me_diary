@@ -66,3 +66,5 @@ gem 'image_processing'
 gem 'ancestry'
 gem 'active_hash'
 gem 'enum_help'
+gem "chartkick"
+gem 'chartable'

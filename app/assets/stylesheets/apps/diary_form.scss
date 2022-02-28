@@ -43,8 +43,30 @@ textarea {
 
 .content-right {
   width: 100%;
-  height: 100%;
+  height: 450px;
   padding: 10px 20px;
+
+    trix-editor {
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    margin: 0;
+    padding: 0.4em 0.6em;
+    height: 368px;
+    outline: none;
+    overflow: auto;
+  }
+
+  trix-toolbar .trix-button-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    overflow-x: auto;
+    flex-direction: row;
+  }
+
+  .trix-content {
+    line-height: 1.2;
+  }
 }
 
 .content-left {
@@ -143,23 +165,3 @@ border-top: 1px solid #eee;
   text-decoration:none; 
 }
 
-trix-editor {
-  border: 1px solid #bbb;
-  border-radius: 3px;
-  margin: 0;
-  padding: 0.4em 0.6em;
-  min-height: 368px;
-  outline: none;
-}
-
-trix-toolbar .trix-button-row {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  overflow-x: auto;
-  flex-direction: row;
-}
-
-.trix-content {
-  line-height: 1.2;
-}

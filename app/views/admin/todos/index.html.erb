@@ -24,8 +24,9 @@
                 <td class="val"><%= todo.title %></td>
                 <td class="val"><%= image_tag todo.image.url, size: "90x60" %></td>
                 <td class="val">
+                  <%= link_to "詳細", admin_todo_path(todo), class: "kike_column_path" %><br>
                   <%= link_to "edit", edit_admin_todo_path(todo), class: "column-table-btn"%><br>
-                  <%= link_to "delete", admin_todo_path(todo), method: :delete, class: "column-table-btn"%></td>
+                  <%= link_to "delete", admin_todo_path(todo), method: :delete, class: "column-table-btn"%>
                 </td>
               </tr>
             <% end %>

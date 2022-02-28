@@ -24,6 +24,7 @@
                 <td class="val"><%= column.title %></td>
                 <td class="val"><%= image_tag column.image.url, size: "90x60" %></td>
                 <td class="val">
+                  <%= link_to "詳細", admin_column_path(column), class: "kike_column_path" %><br>
                   <%= link_to "edit", edit_admin_column_path(column), class: "column-table-btn"%><br>
                   <%= link_to "delete", admin_column_path(column), method: :delete, data: { confirm: "【確認】コラムを削除してもよろしいですか？" }, class: "column-table-btn"%></td>
                 </td>

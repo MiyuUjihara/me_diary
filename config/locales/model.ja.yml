@@ -9,7 +9,7 @@ ja:
       todo: Todo
       diary: 日記
       column: コラム
-      category: カテゴリー
+      category: カテゴリ
       admin_user: 管理者
     # model毎に定義したいattributesを記述
     attributes:
@@ -22,13 +22,6 @@ ja:
           title: タイトル
           content: コンテント
           image: 画像
-          category_id: カテゴリー
+          category_id: カテゴリ
           admin_user_id: 管理者
           status: ステータス
-
-  enums:
-    column:
-      status:
-        active: a
-        inactive: ふが
-        draft: ぴよ

@@ -3,11 +3,11 @@
     <div class="creation_frequency_graph_inner">
       <div class="columns_creation_frequency">
         <div>コラム作成状況</div>
-        <%= line_chart Column.group_by_day(:created_at).count %>
+        <%= line_chart Column.group_by_day(:created_at).count, height: "200px" %>
       </div>
       <div class="todos_creation_frequency">
         <div>ToDo作成状況</div>
-        <%= line_chart Todo.group_by_day(:created_at).count %>
+        <%= line_chart Todo.group_by_day(:created_at).count, height: "200px" %>
       </div>
     </div>
   </div>
@@ -20,12 +20,12 @@
           <thead>
             <tr class="table-column">
               <th scope="col" class="val">id</th>
-              <th scope="col" class="val">user_name</th>
-              <th scope="col" class="val">status</th>
-              <th scope="col" class="val">category</th>
-              <th scope="col" class="val">title</th>
-              <th scope="col" class="val">thumbnail_image</th>
-              <th scope="col" class="val">likes_count</th>
+              <th scope="col" class="val">ユーザー名</th>
+              <th scope="col" class="val">ステータス</th>
+              <th scope="col" class="val">カテゴリ</th>
+              <th scope="col" class="val">タイトル</th>
+              <th scope="col" class="val">サムネイル画像</th>
+              <th scope="col" class="val">いいね数</th>
               <th scope="col" class="val"></th>
             </tr>
           </thead>

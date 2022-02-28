@@ -4,7 +4,7 @@
     <%= f.select :status, Todo.statuses_i18n.keys%>
   </div>
   <div class="admin-form-group">
-    <%= f.label "カテゴリー", class: "admin-form_label" %><br>
+    <%= f.label "カテゴリ", class: "admin-form_label" %><br>
     <%= f.collection_select :category_id, Category.all, :id, :name %>
   </div>
 

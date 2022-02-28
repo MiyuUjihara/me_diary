@@ -1,20 +1,49 @@
+//apps
 .alert-container {
   width: 500px;
   margin: 0 auto;
   line-height: 2.5;
   border-radius: 3px;
   text-align: center;
+  
+  .alert-info {
+    background: #b5dbdf7a;
+    line-height: 2.5;
+    border-radius: 3px;
+  }
+  
+  .alert-danger {
+    background: #f3aeae7a;
+    line-height: 2.5;
+    border-radius: 3px;
+  }
 }
 
-
-.alert-info {
-  background: #b5dbdf7a;
+//admin
+.admin-alert-container {
+  width: calc(100% - 250px);
+  margin: 0 auto;
   line-height: 2.5;
   border-radius: 3px;
-}
+  text-align: center;
+  position: absolute;
+  left: 250px;
 
-.alert-danger {
-  background: #f3aeae7a;
-  line-height: 2.5;
-  border-radius: 3px;
+  .admin-alert-info {
+    width: 50%;
+    margin: 0 auto;
+    background: #b5dbdf7a;
+    line-height: 2.5;
+    border-radius: 3px;
+    z-index: 1;
+  }
+  
+  .admin-alert-danger {
+    width: 50%;
+    margin: 0 auto;
+    background: #f3aeae7a;
+    line-height: 2.5;
+    border-radius: 3px;
+    z-index: 1;
+  }
 }

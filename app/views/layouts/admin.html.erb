@@ -14,14 +14,14 @@
   </head>
   <body>
     <%= render "partial/admin_navbar" %>    
-    <div class="alert-container">
+    <div class="admin-alert-container">
       <% if flash[:notice] %>
-        <div class="alert alert-info">
+        <div class="admin-alert admin-alert-info">
           <%= flash[:notice] %>
         </div>
       <% end %>
       <% if flash[:alert] %>
-        <div class="alert alert-danger">
+        <div class="admin-alert admin-alert-danger">
           <%= flash[:alert] %>
         </div>
       <% end %>

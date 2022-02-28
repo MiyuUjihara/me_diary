@@ -1,5 +1,5 @@
-<div class="users-container">
-  <div class="users-content">
+<div class="admin-users-container">
+  <div class="admin-users-content">
   <h1 class="admin-users-content-h1">管理者登録</h1>
     <div class="-users-content-inner">
       <div class="users-simple-content">
@@ -24,8 +24,8 @@
               <%= f.password_field :password_confirmation, placeholder: "再度パスワード", class: "form-control" %>
               <%= render "partial/erros", errors: @admin_user.errors.full_messages_for(:password_confirmation) %>
             </div>
-            <div class="btn-group">
-              <%= f.submit "新規登録", class: "btn admin-submit-btn" %>
+            <div class="admin-btn-group">
+              <%= f.submit "新規登録", class: "admin-submit-btn" %>
             </div>
         <% end %>
       </div>

@@ -20,7 +20,7 @@
             <nav class="admin-header-outer">
               <ul class="list-unstyled header-nav-text-list">
                 <% if current_admin_user %>
-                  <li class="admin-button-container"><%= link_to "@#{current_admin_user.name}", class: "admin-button"%></li>
+                  <li class="admin-button-container"><%= "@#{current_admin_user.name}"%></li>
                   <li class="admin-button-container"><%= link_to "ログアウト", admin_logout_path, method: :delete, class: "admin-button"%></li>
                 <% else %>
                   <li class="admin-button-container"><%= link_to "ログイン", admin_login_path, class: "admin-button"%></li>

@@ -10,10 +10,7 @@
           <h2 class="title"><%= @column.title %></h2>
           <%= @column.created_at.strftime('%Y/%m') %>
           <%= @column.category.name %>
-          <%= link_to class: "writter" do %>
-            <i class="fas fa-pen-nib"></i>
-            <%= @column.admin_user.name %>
-          <% end %>
+          <div><i class="fas fa-pen-nib"></i><%= @column.admin_user.name %></div>
         </div>
       </div>
     </div>

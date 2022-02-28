@@ -5,9 +5,3 @@ ja:
     attributes:
       column:
         status: ステータス
-  enums:
-    column:
-      status:
-        active: a
-        inactive: ふが
-        draft: ぴよ

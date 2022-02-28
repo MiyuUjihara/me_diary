@@ -5,20 +5,21 @@
 
   .creation_frequency_graph {
     width: 100%;
-    height: 350px;
-    left: 250px;
+    height: 500px;
  
     .creation_frequency_graph_inner {
       width: 80%;
       margin: 0 auto;
       display: flex;
+      flex-direction: column;
 
       .columns_creation_frequency, 
       .todos_creation_frequency {
         padding: 10px;
-        width: 400px;
-        height: 300px;
+        width: 100%;
+        height: 250px;
         margin: 0 auto;
+        margin-bottom: 20px;
       }
     }
   }

@@ -9,9 +9,3 @@ ja:
         content: コンテント
         image: サムネイル画像
         category: カテゴリ
-  enums:
-    todo:
-      status:
-        active: a
-        inactive: ふが
-        draft: ぴよ

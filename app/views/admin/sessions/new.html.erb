@@ -1,5 +1,5 @@
-<div class="users-container">
-  <div class="users-content">
+<div class="admin-users-container">
+  <div class="admin-users-content">
     <h1>管理者ログイン</h1>
     <div class="users-content-inner">
       <div class="users-simple-content">
@@ -12,8 +12,8 @@
               <%= f.label "パスワード", class: "form_label" %>
               <%= f.password_field :password, placeholder: "パスワード", class: "form-control" %>
             </div>
-            <div class="btn-group">
-              <%= f.submit "ログイン", class: "btn admin-submit-btn" %>
+            <div class="admin-btn-group">
+              <%= f.submit "ログイン", class: "admin-submit-btn" %>
             </div>
         <% end %>
       </div>

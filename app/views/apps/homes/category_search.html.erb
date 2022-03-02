@@ -11,7 +11,6 @@
                 <div class="search-post__body">
                   <div class="post__content title-part"><h3><%= column.title %></h3></div>
                   <div class="post__content content-part"><%= strip_tags(column.content.to_s).truncate(120) %></div>
-                  <div class="post__content writter-part"><i class="fas fa-pen-nib"></i><%= column.admin_user.name %></div>
                 </div>
               </div>
             <% end %>

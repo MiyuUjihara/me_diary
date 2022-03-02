@@ -10,7 +10,7 @@ class Admin::SessionsController < Admin::ApplicationController
     if admin_user && admin_user.authenticate(params[:session][:password])
       session[:admin_user_id] = admin_user.id
       flash[:notice] = "ようこそ#{admin_user.name}様"
-      redirect_to admin_user_path(admin_user)
+      redirect_to admin_root_path
     else
       flash[:alert] = "メールアドレス又はパスワードが違います"
       render action: :new

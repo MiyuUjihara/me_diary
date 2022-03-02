@@ -1,11 +1,28 @@
 <% if @columns_search.present? %>
-  <div class="post-list">
-    <% @columns_search .each do | column_search | %>
-      <%= image_tag column_search.image.url %>
-      <%= column_search.title %>
-    <% end %>
+  <div class="search_column">
+    <h2 class="search_column_keyword"><%= "#{@keyword}のキーワードを含む記事" %></h2>
+    <div class="search_column_list">
+      <% @columns_search.each do |column_search| %>
+        <div class="column_parts">
+          <div><%= image_tag column_search.image.url, class: "column_search_image" %></div>
+          <div class="column_search_title"><%= column_search.title %></div>
+        </div>
+      <% end %>
+    </div>
   </div>
 
-  <% else %>
+
+<% else %>
+<div class="search_column">
+  <h2 class="search_column_keyword"><%= "#{@keyword}のキーワードを含む記事" %></h2>
+  <div class="search_column_inner">
     <div><%= "#{@keyword}のキーワードを含む記事はありませんでした" %></div>
- <% end %>
+    <div class="search_uncolumn_list">
+      <h2>再検索のヒント</h2>
+      <p>・誤字脱字がないかを確認してみてください。</p>
+      <p>・ひらがな、カタカナなどの表記を確認してみてください。</p>
+    </div>
+  </div>
+</div>
+<% end %>
+  

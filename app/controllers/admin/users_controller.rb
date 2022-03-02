@@ -3,7 +3,7 @@ class Admin::UsersController < Admin::ApplicationController
   before_action :exist_sign_in!, only: [:new, :create]
 
   def home
-     @all_ranks = Column.find(Like.group(:column_id).order('count(column_id) desc').limit(15).pluck(:column_id))
+     @all_ranks = Column.find(Like.group(:column_id).order('count(column_id) desc').limit(10).pluck(:column_id))
   end
   
   def index

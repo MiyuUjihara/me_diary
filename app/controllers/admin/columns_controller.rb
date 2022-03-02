@@ -12,7 +12,7 @@ class Admin::ColumnsController < Admin::ApplicationController
   def create
     @column = Column.new(column_params)
     if @column.save
-      redirect_to admin_root_path
+      redirect_to admin_columns_path
       flash[:notice] = "コラムが作成されました"
     else
       flash[:alert] = "コラムの作成に失敗しました"
@@ -28,7 +28,7 @@ class Admin::ColumnsController < Admin::ApplicationController
 
   def update
     if @column.update(column_params)
-      redirect_to admin_root_path
+      redirect_to admin_columns_path
       flash[:notice] = "コラムを編集しました"
     else
       flash[:alert] = "コラムの編集に失敗しました"

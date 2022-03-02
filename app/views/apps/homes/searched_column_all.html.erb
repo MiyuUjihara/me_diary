@@ -1,0 +1,21 @@
+<article class="column-wrapper category-search-wrapper2">
+  <h2 class="heading__new-posts" style= "font-size: 24px;" >あなたにおすすめの記事</h2>
+  <div class="content-inner category-posts">
+    <div class="new-posts__container">
+      <ul class="post-list post-list-portrate posts">
+        <% @columns.each do |column| %>
+          <div class="posts-wrapper">
+            <li class="post">
+              <%= link_to apps_path(column), class: "post__inner" do %>
+                <div class="post__thumbnail lazyloaded"><%= image_tag column.image.url, class: "img" %></div>
+                <div class="post__body">
+                  <div class="post__title"><%= column.title %></div>
+                </div>
+              <% end %>
+            </li>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</article>

@@ -3,19 +3,22 @@
   left: 250px;
   background: #f8f8f8;
   width: calc(100% - 250px);
+  min-height: 635px;
 }
 
 .column-table-inner {
-  margin: 0 auto;
+  margin: 60px auto;
   height: 100%;
   width: calc(100% - 300px);
-  margin-top: 60px;
-  padding: 20px;
 }
 
 .table-title {
   margin-bottom: 35px;
   text-align: left;
+}
+
+.table-container {
+  padding-bottom: 10px;
 }
 
 .table {

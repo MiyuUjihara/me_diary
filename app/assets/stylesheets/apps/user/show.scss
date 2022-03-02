@@ -68,8 +68,42 @@
   height: 100%;
 }
 
-.contents-next {
+.users-container-next {
   height: 100px;
+  text-align: center;
+
+  .pagination>.active>a, 
+  .pagination>.active>a:focus, 
+  .pagination>.active>a:hover, 
+  .pagination>.active>span, 
+  .pagination>.active>span:focus, 
+  .pagination>.active>span:hover {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #df9917;
+    border-color: #df9917;
+  }
+  .pagination>li>a, .pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #df9917;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+  .pagination>li:last-child>a, .pagination>li:last-child>span {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  .pagination>li:first-child>a, .pagination>li:first-child>span {
+    margin-left: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
 }
 
 
@@ -219,7 +253,7 @@
 .todo-wrapper {
   background: white;
   width: 550px;
-  height: 550px;
+  height: 600px;
 
   .todo-innner {
     width: 100%;
@@ -232,7 +266,9 @@
     }
 
     .todo-conteiner {
+      height: 260px;
       padding: 0 20px;
+      overflow: auto;
     }
 
     .todos_title {
@@ -260,7 +296,7 @@
   .complete_button_container {
     width: 200px;
     text-align: center;
-    margin: 0 auto;
+    margin: 10px auto 0;
     background: #faebd7b3;
     border-radius: 3px;
 
@@ -281,7 +317,7 @@
 .connection-column-wrapper {
   background-color: white;
   width: 500px;
-  height: 550px;
+  height: 600px;
 }
 
 .heading__connection-column {
@@ -294,7 +330,6 @@
   flex-direction: column;
   width: 100%;
   height: 90%;
-
 }
 
 .connection-columns__container {

@@ -2,7 +2,7 @@ class Admin::TodosController <  Admin::ApplicationController
   before_action :set_todo, only: [:show, :edit, :update, :destroy]
 
   def index
-    @todos = Todo.all.order('created_at DESC')
+    @todos = Todo.all.order('created_at DESC').page(params[:page]).per(5)
   end
 
   def new
@@ -12,7 +12,7 @@ class Admin::TodosController <  Admin::ApplicationController
   def create
     @todo = Todo.new(todo_params)
     if @todo.save
-      redirect_to admin_root_path
+      redirect_to admin_todos_path
       flash[:notice] = "ToDoが作成されました"
     else
       flash[:alert] = "ToDoの作成に失敗しました"
@@ -28,7 +28,7 @@ class Admin::TodosController <  Admin::ApplicationController
 
   def update
     if @todo.update(todo_params)
-      redirect_to admin_root_path
+      redirect_to admin_todos_path
       flash[:notice] = "Todoを編集しました"
     else
       flash[:alert] = "Todoの編集に失敗しました"

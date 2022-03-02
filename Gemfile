@@ -68,3 +68,4 @@ gem 'active_hash'
 gem 'enum_help'
 gem "chartkick"
 gem 'chartable'
+gem "groupdate"

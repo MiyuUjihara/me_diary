@@ -107,6 +107,8 @@ GEM
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    groupdate (6.0.1)
+      activesupport (>= 5.2)
     i18n (1.9.1)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.1)
@@ -275,6 +277,7 @@ DEPENDENCIES
   chartable
   chartkick
   enum_help
+  groupdate
   image_processing
   jbuilder (~> 2.7)
   jquery-rails

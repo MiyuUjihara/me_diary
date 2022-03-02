@@ -1,29 +1,34 @@
-<div class="admin-form-group">
-  <%= f.label :status, class: "admin-form_label" %><br>
-  <%= f.select :status, Column.statuses_i18n.keys%>
-</div>
-<div class="admin-form-group">
-  <%= f.label :category_id, class: "admin-form_label" %><br>
-  <%= f.collection_select :category_id, Category.all, :id, :name %>
+<div class="left_wrapper">
+  <div class="admin-form-group">
+    <%= f.label :status, class: "admin-form_label" %><br>
+    <%= f.select :status, Column.statuses_i18n.keys%>
+  </div>
+  <div class="admin-form-group">
+    <%= f.label :category_id, class: "admin-form_label" %><br>
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
+  </div>
+
+  <div class="admin-form-group">
+    <%= f.label :title, class: "admin-form_label" %>
+    <%= f.text_field :title, class: "form-control admin-column-title-form", placeholder: "タイトル" %>
+  </div>
+  <div class="admin-form-group image-field">
+    <%= f.label "サムネイル画像" , class: "admin-form_label" %><br>
+      <%= f.file_field :image, class: "image_area", style:"display:none;" %>
+      <div class="image-feild">
+          <div class="target">
+            <%= image_tag @column.edit_image_url, width:"100%", height:"100%" %>
+          </div>
+      </div>
+  </div>
 </div>
 
-<div class="admin-form-group">
-  <%= f.label :title, class: "admin-form_label" %>
-  <%= f.text_field :title, class: "form-control admin-column-title-form", placeholder: "タイトル" %>
-</div>
-<div class="admin-form-group image-field">
-  <%= f.label "サムネイル画像" , class: "admin-form_label" %><br>
-    <%= f.file_field :image, class: "image_area", style:"display:none;" %>
-    <div class="image-feild">
-        <div class="target">
-          <%= image_tag @column.edit_image_url, width:"100%", height:"100%" %>
-        </div>
-    </div>
-</div>
-<div class="field">
-  <%= f.label :content, class: "admin-form_label" %>
-  <%= f.rich_text_area :content %>
-</div>
-<div class="admin-form-group admin-btn-area">
-    <%= f.submit "投稿", class: "admin-submit-btn" %>
+<div class="right_wrapper" >
+  <div class="field">
+    <%= f.label :content, class: "admin-form_label" %>
+    <%= f.rich_text_area :content %>
+  </div>
+  <div class="admin-form-group admin-btn-area">
+      <%= f.submit "投稿", class: "admin-submit-btn" %>
+  </div>
 </div>

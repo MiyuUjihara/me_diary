@@ -1,0 +1,18 @@
+.admin-users-container {
+  padding: 40px 0 50px;
+  width: calc(100% - 250px);
+  position: absolute;
+  left: 250px;
+
+  .admin-users-content {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .admin-btn-group {
+
+    .admin-submit-btn {
+      width: 100%;
+    }
+  }
+}

@@ -7,7 +7,7 @@ class Apps::DiariesController < Apps::ApplicationController
   def index
     @user = current_user
 
-    @diaries = @user.diaries.order('date DESC').page(params[:page]).per(9)
+    @diaries = @user.diaries.order('date DESC').page(params[:page]).per(12)
     @diary = Diary.find_by(id: params[:id])
   end
 

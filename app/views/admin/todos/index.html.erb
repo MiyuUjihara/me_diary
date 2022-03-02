@@ -1,16 +1,16 @@
 <article class="admin-column-table">
   <div class="column-table-inner">
-    <h2 class="table-title">List of Todos</h2>
+    <h2 class="table-title">Todo一覧</h2>
     <div class="table-container">
       <table class="table table-striped table-hover">
           <thead>
             <tr class="table-column">
               <th scope="col" class="val">id</th>
-              <th scope="col" class="val">user_name</th>
-              <th scope="col" class="val">status</th>
-              <th scope="col" class="val">category</th>
-              <th scope="col" class="val">title</th>
-              <th scope="col" class="val">thumbnail_image</th>
+              <th scope="col" class="val">ユーザー名</th>
+              <th scope="col" class="val">ステータス</th>
+              <th scope="col" class="val">カテゴリ</th>
+              <th scope="col" class="val">タイトル</th>
+              <th scope="col" class="val">サムネイル画像</th>
               <th scope="col" class="val"></th>
             </tr>
           </thead>
@@ -24,8 +24,8 @@
                 <td class="val"><%= todo.title %></td>
                 <td class="val"><%= image_tag todo.image.url, size: "90x60" %></td>
                 <td class="val">
-                  <%= link_to "edit", edit_admin_todo_path(todo), class: "column-table-btn"%><br>
-                  <%= link_to "delete", admin_todo_path(todo), method: :delete, class: "column-table-btn"%></td>
+                  <%= link_to "編集", edit_admin_todo_path(todo), class: "column-table-btn"%><br>
+                  <%= link_to "削除", admin_todo_path(todo), method: :delete, class: "column-table-btn"%>
                 </td>
               </tr>
             <% end %>
@@ -33,5 +33,7 @@
       </table>
     </div>
   </div>
+  <div style="padding: 10px;"><%= paginate @todos %></div>
 </article>
+
 

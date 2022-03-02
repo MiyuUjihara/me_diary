@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get '/404', to: 'homes#error'
     get '/column/:id', to: "homes#show"
     get '/searched_column/:keyword', to: 'homes#searched_column', as: 'searched_column'
+    get '/searched_column', to: 'homes#searched_column_all', as: 'searched_column_all'
     get '/login', to: 'sessions#new'
     post '/login', to: 'sessions#create'
     delete '/logout', to: 'sessions#destroy'
@@ -48,5 +49,5 @@ Rails.application.routes.draw do
     resources :todos
   end
 
-
+  
 end

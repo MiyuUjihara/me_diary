@@ -8,20 +8,13 @@
         <div class="post-image"><%= image_tag  @column.image.url, class: "img" %></div>
         <div class="post-desc-wrapper">
           <h2 class="title"><%= @column.title %></h2>
-          
           <%= @column.created_at.strftime('%Y/%m') %>
           <%= @column.category.name %>
-
           <div class="writter-container">
-            <%= link_to class: "writter" do %>
-              <i class="fas fa-pen-nib"></i>
-              <%= @column.admin_user.name %>
-            <% end %>
             <div id= "column_<%= @column.id %>" >
               <%= render 'apps/homes/like' %>
             </div>
          </div>
-
         </div>
       </div>
     </div>

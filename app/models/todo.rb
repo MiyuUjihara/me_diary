@@ -17,4 +17,11 @@ class Todo < ApplicationRecord
   def edit_image_url
     return self.id.blank? ? 'noimage.png' : self.image.url
   end
+
+  class << self
+    def search(keyword)
+      where(["title like? OR content like?", "%#{keyword}%", "%#{keyword}%"])
+    end
+  end
+  
 end

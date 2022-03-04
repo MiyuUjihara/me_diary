@@ -42,6 +42,8 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'users#home'
     get '/login', to: 'sessions#new'
+    get 'columns_search' => 'columns#search'
+    get 'todos_search' => 'todos#search'
     post '/login', to: 'sessions#create'
     delete '/logout', to: 'sessions#destroy'
     resources :users

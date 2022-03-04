@@ -1,21 +1,12 @@
 <article class="admin-column-table">
   <div class="column-table-inner">
-    <div class="column_title_search">
-      <h2 class="table-title">コラム一覧</h2>
-
-      <%# 検索フォーム %>
-      <div class="search-keyword-filed-container ">
-        <%= form_with url: admin_columns_search_path, method: :get, local: true do |f| %>
-          <div class="search-keyword-filed-icon">
-            <i class="fas fa-search"></i>
-          </div>
-          <%= f.text_field :keyword, class: "admin_search-keyword-field" %>  
-        <% end %>
+    <% if @columns_search.present? %>
+     <div class="column_title_search">
+        <h2 class="table-title"><%= "#{@keyword}のキーワードを含む記事" %></h2>
+        <%= link_to "コラム一覧へもどる", admin_columns_path %>
       </div>
-    </div>
-
-    <div class="table-container">
-      <table class="table table-striped table-hover">
+      <div class="table-container">
+        <table class="table table-striped table-hover">
           <thead>
             <tr class="table-column">
               <th scope="col" class="val">id</th>
@@ -28,7 +19,7 @@
             </tr>
           </thead>
           <tbody>
-            <% @columns.each do |column| %>
+            <% @columns_search .each do |column| %>
               <tr>
                 <th scope="row" class="val val2"><%= column.id %></th>
                 <td class="val"><%= column.admin_user.name %></td>
@@ -44,8 +35,23 @@
               </tr>
             <% end %>
           </tbody>
-      </table>
+        </table>
+      </div>
+    <% else %>
+    <div class="admin_search_column">
+      <h2 class="search_column_keyword"><%= "#{@keyword}のキーワードを含む記事" %></h2>
+      <div class="search_column_inner">
+        <div><%= "#{@keyword}のキーワードを含む記事はありませんでした" %></div>
+        <div class="search_uncolumn_list">
+          <h2>再検索のヒント</h2>
+          <p>・誤字脱字がないかを確認してみてください。</p>
+          <p>・ひらがな、カタカナなどの表記を確認してみてください。</p>
+        </div>
+        <div>
+          <%= link_to "コラム一覧へもどる", admin_columns_path %>
+        </div>
+      </div>
     </div>
+    <% end %>
   </div>
-  <div style="padding: 10px;"><%= paginate @columns %></div>
 </article>

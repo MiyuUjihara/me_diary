@@ -39,7 +39,6 @@
 .swiper_todos_content {
   width: 350px;
   height: 200px;
-  overflow: auto;
   padding: 10px;
   margin: 10px auto;
 }
@@ -50,7 +49,9 @@
 
 .swiper-content {
   margin-top: 20px;
+  height: 150px;
   text-align: center;
+  overflow: auto;
 }
 
 .todo_select_button {

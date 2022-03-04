@@ -56,34 +56,3 @@ footer {
     text-align: center;
   }
 }
-
-//admin footer
-
-
-.admin-footer {
-  width: calc(100% - 250px);
-  height: 50px;
-  background: rgba(194, 193, 193, 0.27);
-  position: absolute;
-  left: 250px;
-
-
-  .admin-text-center {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-  
-    .admin-footer-parts {
-      margin: 12px;
-      color: rgba(29, 29, 29, 0.781);
-    }
-  
-    .admin-footer-button:hover {
-      opacity: 0.6;
-      cursor: pointer;
-    }
-  }
-}
-
-
-

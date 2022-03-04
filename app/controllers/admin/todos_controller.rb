@@ -45,6 +45,15 @@ class Admin::TodosController <  Admin::ApplicationController
     redirect_to admin_root_path
   end
 
+  def search
+    if params[:keyword].present?
+      @keyword = params[:keyword]
+      @todos_search = Todo.search(params[:keyword]).page(params[:page]).per(5)
+    else
+      redirect_to admin_todos_path
+    end
+  end
+
   private
 
     def todo_params

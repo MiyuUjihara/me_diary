@@ -45,6 +45,15 @@ class Admin::ColumnsController < Admin::ApplicationController
     redirect_to admin_root_path
   end
 
+  def search
+    if params[:keyword].present?
+      @keyword = params[:keyword]
+      @columns_search = Column.search(params[:keyword]).page(params[:page]).per(5)
+    else
+      redirect_to admin_columns_path
+    end
+  end
+
   private
 
     def column_params

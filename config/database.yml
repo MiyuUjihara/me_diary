@@ -76,8 +76,10 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+
 production:
   <<: *default
   database: me_diary_production
-  username: me_diary
-  password: <%= ENV['ME_DIARY_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: <%= Rails.application.credentials.db[:password] %>
+  host: <%= Rails.application.credentials.db[:hostname] %>

@@ -3,7 +3,7 @@ server "35.77.123.119", user: "miyu", roles: %w{app db web}
 set :ssh_options, {
   keys: %w(~/.ssh/me_diary.pem),
   forward_agent: true,
-  auth_methods: %w(publickey),
+  # auth_methods: %w(publickey),
 }
 
 

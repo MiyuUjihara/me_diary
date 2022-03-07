@@ -1,4 +1,4 @@
-server "35.77.123.119", user: "ec2-user", roles: %w{app db web}
+server "35.77.123.119", user: "miyu", roles: %w{app db web}
 
 set :ssh_options, {
   keys: %w(~/.ssh/me_diary.pem),

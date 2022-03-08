@@ -1,12 +1,4 @@
-server "54.199.157.148", user: "miyu", roles: %w{app db web}
-
-set :ssh_options, {
-  keys: %w(~/.ssh/me_diary.pem),
-  forward_agent: true,
-  auth_methods: %w(publickey),
-}
-
-
+server '3.114.134.111', user: 'ec2-user', roles: %w{app db web}
 
 # server-based syntax
 # ======================

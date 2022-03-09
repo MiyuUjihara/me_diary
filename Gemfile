@@ -76,6 +76,10 @@ gem "chartkick"
 gem 'chartable'
 gem "groupdate"
 
+gem 'net-imap'
+gem 'net-pop'
+gem 'net-smtp'
+
 group :production do
   gem 'unicorn'
 end

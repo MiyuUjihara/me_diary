@@ -8,10 +8,10 @@ class Category < ActiveHash::Base
     { id: 5, name: 'ビューティー', url: "columns_category/beauty.jpeg" },
     { id: 6, name: 'おでかけ', url: "columns_category/travel.jpeg" },
     { id: 7, name: 'インテリア', url: "columns_category/interior.jpeg" },
-    { id: 8, name: 'レシピ', url: "columns_category/recipe.jpg" },
+    { id: 8, name: 'レシピ', url: "columns_category/recipe.jpeg" },
     { id: 9, name: 'お掃除', url: "columns_category/clean.jpeg" },
     { id: 10, name: 'ヘアスタイル', url: "columns_category/hairstyle.jpeg" },
     { id: 11, name: 'ファッション', url: "columns_category/fashion.jpeg" },
-    { id: 12, name: 'SDGs', url: "columns_category/sastainable.png" }
+    { id: 12, name: 'SDGs', url: "columns_category/sastainable.jpeg" }
   ]
 end

@@ -8,12 +8,15 @@
 }
 
 .current_user_todos_wrapper {
+  width: 1000px;
   padding: 30px;
 
   .current_user_todos_header {
-    margin-bottom: 15px;
     font-size: 1.5rem;
     font-weight: 500;
+    height: 80px;
+    margin-bottom: 28px;
+    border-bottom: solid 1px #c5c5c5;
   }
 
   .current_user_todos {

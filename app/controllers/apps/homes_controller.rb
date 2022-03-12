@@ -17,11 +17,11 @@ class Apps::HomesController < Apps::ApplicationController
   def searched_column
     @keyword = params[:keyword]
     @columns_search = Column.search(params[:keyword])
-    @columns_random = Column.order("RANDOM()").limit(9)
+    @columns_random = Column.order("RAND()").limit(9)
   end
 
   def searched_column_all
-    @columns = Column.order("RANDOM()").limit(9)
+    @columns = Column.order("RAND()").limit(9)
   end
 
 

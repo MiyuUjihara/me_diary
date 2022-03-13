@@ -2,7 +2,7 @@ class Admin::ColumnsController < Admin::ApplicationController
   before_action :set_column, only: [:show, :edit, :update, :destroy]
 
   def index
-    @columns = Column.all.order('created_at DESC').page(params[:page]).per(5)
+    @columns = Column.all.order('created_at DESC').includes([:admin_user]).page(params[:page]).per(5)
   end
 
   def new
@@ -42,7 +42,7 @@ class Admin::ColumnsController < Admin::ApplicationController
     else
       flash[:alert] = "コラムの削除に失敗しました"
     end
-    redirect_to admin_root_path
+    redirect_to admin_columns_path
   end
 
   def search

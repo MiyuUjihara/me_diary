@@ -11,7 +11,6 @@ class Category < ActiveHash::Base
     { id: 8, name: 'レシピ', url: "columns_category/recipe.jpeg" },
     { id: 9, name: 'お掃除', url: "columns_category/clean.jpeg" },
     { id: 10, name: 'ヘアスタイル', url: "columns_category/hairstyle.jpeg" },
-    { id: 11, name: 'ファッション', url: "columns_category/fashion.jpeg" },
-    { id: 12, name: 'SDGs', url: "columns_category/earth.jpeg" }
+    { id: 11, name: 'ファッション', url: "columns_category/fashion.jpeg" }
   ]
 end

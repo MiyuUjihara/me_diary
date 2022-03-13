@@ -2,7 +2,7 @@ class Admin::TodosController <  Admin::ApplicationController
   before_action :set_todo, only: [:show, :edit, :update, :destroy]
 
   def index
-    @todos = Todo.all.order('created_at DESC').page(params[:page]).per(5)
+    @todos = Todo.all.order('created_at DESC').includes([:admin_user]).page(params[:page]).per(5)
   end
 
   def new
@@ -42,7 +42,7 @@ class Admin::TodosController <  Admin::ApplicationController
     else
       flash[:alert] = "Todoの削除に失敗しました"
     end
-    redirect_to admin_root_path
+    redirect_to admin_todos_path
   end
 
   def search

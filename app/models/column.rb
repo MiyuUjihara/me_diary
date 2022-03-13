@@ -19,8 +19,17 @@ class Column < ApplicationRecord
   end
 
   class << self
+
     def search(keyword)
       where(["title like? OR content like?", "%#{keyword}%", "%#{keyword}%"])
+    end
+
+    def status_active
+      where(status: "active")
+    end
+    
+    def set_romdom(num)
+      self.order("RAND()").limit(num)
     end
   end
 

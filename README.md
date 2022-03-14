@@ -23,7 +23,7 @@
   <li>コラム・ToDoの検索</li>
 </ul>
 <div style="display: flex;">
-  <a href="https://gyazo.com/2465dffe28ac803b561130ffd38b9522"><img src="https://i.gyazo.com/2465dffe28ac803b561130ffd38b9522.png" alt="Image from Gyazo" width="1000"/></a>
+  <a href="https://gyazo.com/2465dffe28ac803b561130ffd38b9522"><img src="https://i.gyazo.com/2465dffe28ac803b561130ffd38b9522.png" alt="Image from Gyazo" width="500"/></a>
   <a href="https://gyazo.com/5f3f1a214a496768fda4cbb51efb1f08"><img src="https://i.gyazo.com/5f3f1a214a496768fda4cbb51efb1f08.png" alt="Image from Gyazo" width="500"/></a>
   <a href="https://gyazo.com/0403cdaafe5090fe5a69dba6e278f298"><img src="https://i.gyazo.com/0403cdaafe5090fe5a69dba6e278f298.png" alt="Image from Gyazo" width="500"/></a>
 </div>

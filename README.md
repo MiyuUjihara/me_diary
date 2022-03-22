@@ -1,5 +1,12 @@
 <h1>me_diary(日記・記事アプリ)</h1>
 
+<h2>URL</h2>
+http://54.92.95.185/
+
+<h2>テストアカウント</h2>
+
+<div>Email: test@gmail.com</div>
+<div>pass: testtest</div>
 
 <h2>機能と説明</h2>
 
@@ -23,19 +30,11 @@
   <li>コラム・ToDoの検索</li>
 </ul>
 <div style="display: flex;">
-  <a href="https://gyazo.com/2465dffe28ac803b561130ffd38b9522"><img src="https://i.gyazo.com/2465dffe28ac803b561130ffd38b9522.png" alt="Image from Gyazo" width="1000"/></a>
+  <a href="https://gyazo.com/2465dffe28ac803b561130ffd38b9522"><img src="https://i.gyazo.com/2465dffe28ac803b561130ffd38b9522.png" alt="Image from Gyazo" width="500"/></a>
   <a href="https://gyazo.com/5f3f1a214a496768fda4cbb51efb1f08"><img src="https://i.gyazo.com/5f3f1a214a496768fda4cbb51efb1f08.png" alt="Image from Gyazo" width="500"/></a>
   <a href="https://gyazo.com/0403cdaafe5090fe5a69dba6e278f298"><img src="https://i.gyazo.com/0403cdaafe5090fe5a69dba6e278f298.png" alt="Image from Gyazo" width="500"/></a>
 </div>
 
-
-<h2>URL</h2>
-http://54.92.95.185/
-
-<h2>テストアカウント</h2>
-
-<div>Email: test@gmail.com</div>
-<div>pass: testtest</div>
 
 <h2>使用技術</h2>
 <ul>

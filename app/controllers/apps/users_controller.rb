@@ -24,7 +24,7 @@ class Apps::UsersController < Apps::ApplicationController
     today_user_todo = current_user.user_todos.where(created_at: Time.zone.today.beginning_of_day..Time.zone.today.end_of_day).last
     @selected_todo  = current_user.todos.find_by(id: today_user_todo.todo_id) rescue nil
     @user_todo      = @selected_todo.user_todos.last rescue nil
-    @todos = Todo.find(Todo.pluck(:id).shuffle[0..2])
+    @todos = Todo.includes([:rich_text_content]).find(Todo.pluck(:id).shuffle[0..2])
   end
 
   def likes

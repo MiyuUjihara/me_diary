@@ -43,8 +43,8 @@ class Apps::UserTodosController < Apps::ApplicationController
 
 
   def selected
-    @current_user_todos = UserTodo.where(user_id: current_user.id).order('created_at DESC').page(params[:page]).per(12)
-    @todos_status = @current_user_todos.pluck(:status)
+    @current_user_todos = UserTodo.where(user_id: current_user.id).includes([:todo]).order('created_at DESC').page(params[:page]).per(12)
+    # @todos_status = @current_user_todos.pluck(:status)
   end
 
 end

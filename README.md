@@ -1,12 +1,22 @@
 <h1>me_diary(日記・記事アプリ)</h1>
 
-<h2>URL</h2>
-http://54.92.95.185/
 
-<h2>テストアカウント</h2>
+<h2>URL/テストアカウント</h2>
+<div>
+  <h4>【ユーザーUI】</h4>
+  http://54.92.95.185/apps
+  <p>サンプルアカウント</p>
+  <p>email: test@gmail.com</p>
+  <p>pass: testtest</p>
+</div>
 
-<div>Email: test@gmail.com</div>
-<div>pass: testtest</div>
+<div>
+  <h4>【管理者UI】</h4>
+  http://54.92.95.185/admin
+  <p>サンプルアカウント</p>
+  <p>email: admin@gmail.com</p>
+  <p>pass: testtest</p>
+</div>
 
 <h2>機能と説明</h2>
 
